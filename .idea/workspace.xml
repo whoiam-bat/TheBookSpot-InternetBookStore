@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="store:war exploded" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3d533b16-076b-4204-9985-cbc94f100165" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/store_war.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/store_war_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/my/store/controller/PersonalCabinet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/my/store/controller/SignUp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/my/store/controller/WelcomePage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/my/store/dao/BookStockDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/my/store/dao/CustomerDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/my/store/model/Book.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/my/store/model/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/my/store/model/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/my/store/model/OrderHasBook.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/my/store/model/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/my/store/model/Step.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/META-INF/context.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/cabinet.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/welcome-page.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/sign-in-form.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/sign-up-form.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/templates/book_img/got1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/templates/book_img/got2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/templates/book_img/got3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/templates/book_img/got4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/templates/book_img/got5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/templates/book_img/hp1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/templates/book_img/hp2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/templates/book_img/hp3.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/templates/book_img/hp4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/templates/book_img/hp5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/templates/book_img/hp6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/templates/book_img/hp7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/templates/book_img/orwell-1984.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/templates/book_img/orwell-af.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/welcome-page.jsp" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Jsp File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2EJGvpRMDFd1reAsAzO8galZBh4" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/мусор/Програмування/Java/FirstWebApp/Test&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\мусор\Програмування\Java\ЄБУМ\Final Project\Internet store\store\src\main\webapp\WEB-INF\templates\book_img" />
+      <recent name="D:\мусор\Програмування\Java\ЄБУМ\Final Project\Internet store\store\src\main\webapp\WEB-INF\fonst" />
+      <recent name="D:\мусор\Програмування\Java\ЄБУМ\Final Project\Internet store\store\src\main\webapp\WEB-INF\lib" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\мусор\Програмування\Java\ЄБУМ\Final Project\Internet store\store\src\main\webapp" />
+      <recent name="D:\мусор\Програмування\Java\ЄБУМ\Final Project\Internet store\store\src\main\webapp\WEB-INF\templates" />
+      <recent name="D:\мусор\Програмування\Java\ЄБУМ\Final Project\Internet store\store\src\main\webapp\css" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Tomcat 9.0.651" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.651" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/Store" />
+      <deployment>
+        <artifact name="store:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/Store" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="8dc5373a-c778-473e-a060-97f02e469e3a" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="52743" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="store:war exploded" />
+        </option>
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3d533b16-076b-4204-9985-cbc94f100165" name="Changes" comment="" />
+      <created>1662295048923</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1662295048923</updated>
+      <workItem from="1662295050438" duration="4649000" />
+      <workItem from="1662306508811" duration="4568000" />
+      <workItem from="1662313737897" duration="5408000" />
+      <workItem from="1662362781162" duration="4000" />
+      <workItem from="1662387829657" duration="586000" />
+      <workItem from="1662445383848" duration="48000" />
+      <workItem from="1662454170053" duration="29000" />
+      <workItem from="1662459759236" duration="9000" />
+      <workItem from="1662460660397" duration="3000" />
+      <workItem from="1662464451622" duration="8024000" />
+      <workItem from="1662474310383" duration="6164000" />
+      <workItem from="1662482079371" duration="5048000" />
+      <workItem from="1662535999992" duration="5131000" />
+      <workItem from="1662543992596" duration="7376000" />
+      <workItem from="1662553189952" duration="7024000" />
+      <workItem from="1662564525084" duration="7490000" />
+      <workItem from="1662573306387" duration="5849000" />
+      <workItem from="1662612483518" duration="6719000" />
+      <workItem from="1662635109691" duration="3000" />
+      <workItem from="1662655601782" duration="237000" />
+      <workItem from="1662706853043" duration="215000" />
+      <workItem from="1662708166556" duration="385000" />
+      <workItem from="1662728113263" duration="625000" />
+      <workItem from="1662741200466" duration="653000" />
+      <workItem from="1662742523617" duration="1077000" />
+      <workItem from="1662749077618" duration="100000" />
+      <workItem from="1662749326657" duration="1403000" />
+      <workItem from="1662752878390" duration="123000" />
+      <workItem from="1662787696226" duration="1084000" />
+      <workItem from="1662794567216" duration="95000" />
+      <workItem from="1662794821742" duration="3018000" />
+      <workItem from="1662802794277" duration="8000" />
+      <workItem from="1662803235978" duration="595000" />
+      <workItem from="1662816249965" duration="1552000" />
+      <workItem from="1662819599121" duration="121000" />
+      <workItem from="1662829185660" duration="7331000" />
+      <workItem from="1662836611246" duration="1654000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

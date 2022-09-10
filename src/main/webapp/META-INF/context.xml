@@ -1,0 +1,16 @@
+<Context>
+    <!-- name - name of the database-->
+    <Resource name="store"
+              global="store"
+              auth="Container"
+              type="javax.sql.DataSource"
+              driverClassName="com.mysql.jdbc.Driver"
+              url="jdbc:mysql://localhost:3306/store"
+              username="root"
+              password="1488"
+
+              maxActive="100"
+              maxIdle="20"
+              minIdle="5"
+              maxWait="10000"/>
+</Context>

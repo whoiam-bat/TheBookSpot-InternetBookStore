@@ -1,0 +1,144 @@
+html {
+    width: 100%;
+    height: 100%;
+    background: #ededed;
+}
+
+body{
+    margin: 0;
+}
+
+header {
+    background: #7682cc;
+    width: 100%;
+    height: 10%;
+}
+
+.header_search {
+    position: absolute;
+    padding: 0 10px 0 30px;
+}
+
+.header_personal {
+    width: 50px;
+    position: relative;
+    padding: 0;
+    margin-right: 20px;
+    margin-left: 300px;
+    text-align: right;
+}
+
+.header_personal a {
+    background: #7682cc;
+    border-radius: 100%;
+    color: #454545;
+    cursor: pointer;
+    font-size: 20px;
+    text-decoration: none;
+    transition: all 0.4s ease-in-out;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+    top: 0;
+    margin: 0 6px 10px 6px;
+}
+
+.header_personal a:hover {
+    color: #ffffff;
+}
+
+
+
+/*---------------------------------------
+  Display each book
+-----------------------------------------*/
+
+.product {
+    height: 610px;
+    padding: 22px 15px 25px;
+    -webkit-transition: border-color .25s ease-out;
+    transition: border-color .25s ease-out;
+    color: #acacac;
+    border-top: 5px solid transparent;
+    border-right: 1px solid #ededed;
+    border-bottom: 1px solid #ededed;
+}
+
+.product_media_wrapper {
+    position: relative;
+    display: block;
+    height: 355px;
+    margin-bottom: 20px;
+}
+
+.product_media {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 100%;
+    max-height: 100%;
+
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.product_name {
+    display: block;
+    font-size: 16px;
+    line-height: 1.1;
+    height: 45px;
+    margin-bottom: 11px;
+    color: #000;
+    margin-top: 10px;
+}
+
+.product_author {
+    font-size: 16px;
+    line-height: 1;
+    height: 18px;
+    margin-bottom: 11px;
+    text-overflow: ellipsis;
+    color: #626262;
+}
+
+.product_price {
+    float: left;
+    text-align: center;
+}
+
+.product_price_current {
+    font-size: 18px;
+    line-height: 1;
+    text-align: left;
+    color: #bf0830;
+}
+
+.item {
+    -webkit-transform: translate3d(0,0,0);
+    -moz-transform: translate3d(0,0,0);
+    -ms-transform: translate3d(0,0,0);
+    float: left;
+}
+
+
+@media (min-width: 768px) {
+    .col-products {
+        float: left;
+        width: 100%;
+
+        position: relative;
+        min-height: 1px;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+}
+
+.col-wrapper {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
