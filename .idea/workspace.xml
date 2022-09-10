@@ -9,56 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d533b16-076b-4204-9985-cbc94f100165" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/store_war.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/store_war_exploded.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/my/store/controller/PersonalCabinet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/my/store/controller/SignUp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/my/store/controller/WelcomePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/my/store/dao/BookStockDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/my/store/dao/CustomerDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/my/store/model/Book.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/my/store/model/Customer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/my/store/model/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/my/store/model/OrderHasBook.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/my/store/model/Role.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/my/store/model/Step.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/META-INF/context.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/cabinet.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/welcome-page.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/sign-in-form.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/sign-up-form.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/templates/book_img/got1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/templates/book_img/got2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/templates/book_img/got3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/templates/book_img/got4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/templates/book_img/got5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/templates/book_img/hp1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/templates/book_img/hp2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/templates/book_img/hp3.jfif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/templates/book_img/hp4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/templates/book_img/hp5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/templates/book_img/hp6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/templates/book_img/hp7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/templates/book_img/orwell-1984.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/templates/book_img/orwell-af.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/welcome-page.jsp" afterDir="false" />
+    <list default="true" id="3d533b16-076b-4204-9985-cbc94f100165" name="Changes" comment="2.0">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -252,8 +204,23 @@
       <workItem from="1662816249965" duration="1552000" />
       <workItem from="1662819599121" duration="121000" />
       <workItem from="1662829185660" duration="7331000" />
-      <workItem from="1662836611246" duration="1654000" />
+      <workItem from="1662836611246" duration="2353000" />
     </task>
+    <task id="LOCAL-00001" summary="Working on registration">
+      <created>1662838517869</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1662838517869</updated>
+    </task>
+    <task id="LOCAL-00002" summary="2.0">
+      <created>1662838942550</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1662838942550</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,5 +236,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Working on registration" />
+    <MESSAGE value="2.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="2.0" />
   </component>
 </project>
