@@ -14,7 +14,8 @@ import javax.sql.DataSource;
 
 @WebServlet("/sign-up")
 public class SignUp extends HttpServlet {
-   private CustomerDao customerDao;
+    public static final String SIGN_UP_PAGE = "sign-up-form.jsp";
+    private CustomerDao customerDao;
 
     @Resource(name="store")
     private DataSource dataSource;
@@ -27,6 +28,11 @@ public class SignUp extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.getRequestDispatcher(SIGN_UP_PAGE).forward(req, resp);
     }
 
     @Override
@@ -56,7 +62,7 @@ public class SignUp extends HttpServlet {
             System.out.println("Error: " + e.getMessage());
 
             session.setAttribute("ERROR", "User with such email already exists");
-            resp.sendRedirect("sign-up-form.jsp");
+            resp.sendRedirect(SIGN_UP_PAGE);
         }
     }
 
