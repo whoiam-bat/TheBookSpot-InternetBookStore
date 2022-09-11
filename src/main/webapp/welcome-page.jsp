@@ -28,7 +28,6 @@
     </div>
 </header>
 
-
     <div class="col-products">
         <div class="col-wrapper">
             <c:forEach var="it" items="${BOOK_LIST}">
