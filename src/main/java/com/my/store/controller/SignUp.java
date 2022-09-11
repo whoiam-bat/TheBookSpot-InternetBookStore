@@ -3,14 +3,16 @@ package com.my.store.controller;
 import com.my.store.dao.CustomerDao;
 import com.my.store.model.Customer;
 
-import java.io.*;
-import java.util.InputMismatchException;
 import javax.annotation.Resource;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
+import java.io.IOException;
+import java.util.InputMismatchException;
 
 @WebServlet("/sign-up")
 public class SignUp extends HttpServlet {
@@ -24,7 +26,7 @@ public class SignUp extends HttpServlet {
     public void init() {
         // create our db util ... and pass in the connection pool / datasource
         try {
-            customerDao = new CustomerDao(dataSource);
+            customerDao = new CustomerDao();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -37,7 +39,6 @@ public class SignUp extends HttpServlet {
 
     @Override
     protected void doPost (HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        HttpSession session = req.getSession();
         try {
             // read customer info from form data
             String fullname = req.getParameter("fullname");
@@ -56,18 +57,19 @@ public class SignUp extends HttpServlet {
             customerDao.addCustomer(customer);
 
             // send to main page for customer
-            RequestDispatcher dispatcher = req.getRequestDispatcher("/personal-cabinet");
-            dispatcher.forward(req, resp);
+            resp.sendRedirect("/personal-cabinet");
         } catch (InputMismatchException e) {
             System.out.println("Error: " + e.getMessage());
-
+            HttpSession session = req.getSession();
             session.setAttribute("ERROR", "User with such email already exists");
             resp.sendRedirect(SIGN_UP_PAGE);
         }
     }
 
     private void isUserAlreadyExists(Customer customer) throws InputMismatchException {
-        if (customerDao.searchCustomer(customer.getEmail(), customer.getPassword()) != null)
+        String email = customer.getEmail();
+        String password = customer.getPassword();
+        if (customerDao.emailAndPasswordExists(email, password))
             throw new InputMismatchException();
     }
 }

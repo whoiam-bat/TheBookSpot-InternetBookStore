@@ -1,5 +1,6 @@
 package com.my.store.controller;
 
+import com.my.store.JdbcConfig;
 import com.my.store.dao.BookStockDao;
 import com.my.store.dao.CustomerDao;
 import com.my.store.model.Book;
@@ -21,16 +22,13 @@ public class PersonalCabinet extends HttpServlet {
     private CustomerDao customerDao;
     private BookStockDao bookStockDao;
 
-    @Resource(name="store")
-    private DataSource dataSource;
-
-
     @Override
     public void init() {
         // create our db util ... and pass in the connection pool / datasource
+
         try {
-            customerDao = new CustomerDao(dataSource);
-            bookStockDao = new BookStockDao(dataSource);
+            customerDao = new CustomerDao();
+            bookStockDao = new BookStockDao();
         } catch (Exception e) {
             e.printStackTrace();
         }

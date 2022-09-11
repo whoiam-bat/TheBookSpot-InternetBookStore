@@ -1,5 +1,6 @@
 package com.my.store.dao;
 
+import com.my.store.JdbcConfig;
 import com.my.store.model.Book;
 
 import javax.sql.DataSource;
@@ -7,11 +8,10 @@ import java.sql.*;
 import java.util.*;
 
 public class BookStockDao {
-    private final DataSource dataSource;
+    private final Connection connection;
 
-
-    public BookStockDao(DataSource dataSource) {
-        this.dataSource = dataSource;
+    public BookStockDao() {
+        connection = JdbcConfig.getInstance().getConnection();
     }
 
 
@@ -19,8 +19,7 @@ public class BookStockDao {
         List<Book> bookList = new ArrayList<>();
 
         try(
-                Connection con = dataSource.getConnection();
-                Statement stmt = con.createStatement();
+                Statement stmt = connection.createStatement();
                 ResultSet rs = stmt.executeQuery("SELECT * FROM book;");
                 ) {
 
@@ -48,8 +47,7 @@ public class BookStockDao {
     public Book getBook(String bookId) {
         Book res = null;
         try(
-                Connection con = dataSource.getConnection();
-                PreparedStatement pstmt = con.prepareStatement("SELECT * FROM book WHERE id=?;");
+                PreparedStatement pstmt = connection.prepareStatement("SELECT * FROM book WHERE id=?;");
         ) {
             pstmt.setInt(1, Integer.parseInt(bookId));
 
@@ -72,8 +70,7 @@ public class BookStockDao {
     public Book searchBookByTitle(String nameBook) {
         Book res = null;
         try(
-                Connection con = dataSource.getConnection();
-                PreparedStatement pstmt = con.prepareStatement("SELECT * FROM book WHERE title=?;");
+                PreparedStatement pstmt = connection.prepareStatement("SELECT * FROM book WHERE title=?;");
         ) {
             pstmt.setString(1, nameBook);
 
@@ -95,8 +92,7 @@ public class BookStockDao {
 
     public void addBook(Book book) {
         try (
-                Connection con = dataSource.getConnection();
-                PreparedStatement pstmt = con.prepareStatement(
+                PreparedStatement pstmt = connection.prepareStatement(
                         "INSERT INTO book (title, author, genre, price, amount, image) " +
                                 "VALUE(?, ?, ?, ?, ?, ?)");
                 ) {
@@ -114,8 +110,8 @@ public class BookStockDao {
     }
 
     public void deleteBook(String id) {
-        try (Connection con = dataSource.getConnection();
-             PreparedStatement pstmt = con.prepareStatement("DELETE FROM book WHERE id=?;");) {
+        try (
+             PreparedStatement pstmt = connection.prepareStatement("DELETE FROM book WHERE id=?;");) {
 
             pstmt.setInt(1, Integer.parseInt(id));
 
@@ -127,8 +123,7 @@ public class BookStockDao {
 
     public void updateBook(Book book) {
         try(
-                Connection con = dataSource.getConnection();
-                PreparedStatement pstmt = con.prepareStatement(
+                PreparedStatement pstmt = connection.prepareStatement(
                         "UPDATE book SET title=?, author=?, genre=?, price=?, amount=?, image=?" +
                                 " WHERE id=?;");) {
 

@@ -1,27 +1,25 @@
 package com.my.store.dao;
 
-import com.my.store.model.Book;
+import com.my.store.JdbcConfig;
 import com.my.store.model.Customer;
-import com.my.store.model.Role;
 
-import javax.sql.DataSource;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class CustomerDao {
-    private final DataSource dataSource;
+    private final Connection connection;
 
-    public CustomerDao(DataSource dataSource) {
-        this.dataSource = dataSource;
+    public CustomerDao() {
+        connection = JdbcConfig.getInstance().getConnection();
     }
+
     public void addCustomer(Customer customer) {
         final String ownerName = "Oleksii Drabchak";
         final String ownerEmail = "drabchak.aleksey@gmail.com";
 
         try (
-                Connection con = dataSource.getConnection();
-                PreparedStatement pstmt = con.prepareStatement(
+                PreparedStatement pstmt = connection.prepareStatement(
                         "INSERT INTO customer (id, fullname, email, password, role_id) VALUE (?, ?, ?, ? ,?)");) {
 
             pstmt.setInt(1, customer.getId());
@@ -42,8 +40,7 @@ public class CustomerDao {
 
     public void deleteCustomer(Customer customer) {
         try (
-                Connection con = dataSource.getConnection();
-                PreparedStatement pstmt = con.prepareStatement(
+                PreparedStatement pstmt = connection.prepareStatement(
                         "DELETE FROM customer WHERE fullname LIKE ?;")) {
 
             pstmt.setString(1, customer.getFullName());
@@ -58,18 +55,17 @@ public class CustomerDao {
         List<Customer> customerList = new ArrayList<>();
 
         try (
-                Connection con = dataSource.getConnection();
-                Statement stmt = con.createStatement();
+                Statement stmt = connection.createStatement();
                 ResultSet rs = stmt.executeQuery("SELECT * FROM customer;")) {
 
-            while(rs.next()) {
+            while (rs.next()) {
                 int id = rs.getInt("id");
                 String fullName = rs.getString("fullname");
                 String email = rs.getString("email");
                 String password = rs.getString("password");
                 int roleID = rs.getInt("role_id");
 
-                Customer temp = new Customer(id, fullName,email, password, roleID);
+                Customer temp = new Customer(id, fullName, email, password, roleID);
 
                 customerList.add(temp);
             }
@@ -81,12 +77,11 @@ public class CustomerDao {
     }
 
     public void updateCustomer(Customer customer) {
-        try(
-                Connection con = dataSource.getConnection();
-                PreparedStatement pstmt = con.prepareStatement(
+        try (
+                PreparedStatement pstmt = connection.prepareStatement(
                         "UPDATE customer SET fullname=?, email=?, password=?, role_id=?" +
-                " WHERE id=?;");
-                ) {
+                                " WHERE id=?;");
+        ) {
             pstmt.setString(1, customer.getFullName());
             pstmt.setString(2, customer.getEmail());
             pstmt.setString(3, customer.getPassword());
@@ -99,25 +94,23 @@ public class CustomerDao {
         }
     }
 
-    public Customer searchCustomer(String email, String password) {
-        Customer res = null;
-        try(
-                Connection con = dataSource.getConnection();
-                PreparedStatement pstmt = con.prepareStatement("SELECT * FROM customer WHERE email=? AND password=?;");
+    public boolean emailAndPasswordExists(String email, String password) {
+        try (
+                PreparedStatement pstmt = connection.prepareStatement("SELECT * FROM customer WHERE email=? AND password=?;")
         ) {
             pstmt.setString(1, email);
             pstmt.setString(2, password);
 
             ResultSet rs = pstmt.executeQuery();
 
-            if(rs.next()) {
-                res = new Customer(rs.getString("email"), rs.getString("password"));
+            if (rs.next()) {
+                return true;
             }
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
-        return res;
+        return false;
     }
 }
