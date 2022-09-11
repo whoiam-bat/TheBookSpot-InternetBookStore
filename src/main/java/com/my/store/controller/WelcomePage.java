@@ -42,5 +42,4 @@ public class WelcomePage extends HttpServlet {
         RequestDispatcher dispatcher = request.getRequestDispatcher("/welcome-page.jsp");
         dispatcher.forward(request, response);
     }
-
 }

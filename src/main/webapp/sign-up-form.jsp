@@ -16,7 +16,6 @@
   <c:set var="errMessage" value="${sessionScope.ERROR}" scope="page"/>
 </c:if>
 
-<c:remove var="ERROR" scope="session" />
 <%
   session.removeAttribute("ERROR");
 %>
@@ -27,10 +26,9 @@
     <c:if test="${errMessage != null}">
       <div class="alert alert-danger alert-dismissible" role="alert">
         <strong>Warning!</strong> ${errMessage}
-        <a href="sign-up" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <a href="Store/sign-up" class="close" data-dismiss="alert" aria-label="close">&times;</a>
       </div>
     </c:if>
-
 
 
     <table>
@@ -58,7 +56,6 @@
       </tbody>
     </table>
   </form>
-
 
 </body>
 </html>
