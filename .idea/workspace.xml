@@ -10,9 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3d533b16-076b-4204-9985-cbc94f100165" name="Changes" comment="Fixed bugs with registrations">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/my/store/controller/SignUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/my/store/controller/SignUp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/welcome-page.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/welcome-page.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/sign-up-form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/sign-up-form.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

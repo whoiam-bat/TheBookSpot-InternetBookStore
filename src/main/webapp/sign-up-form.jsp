@@ -30,7 +30,6 @@
       </div>
     </c:if>
 
-
     <table>
       <tbody>
       <tr>
