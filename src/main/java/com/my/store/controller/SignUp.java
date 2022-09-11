@@ -37,7 +37,6 @@ public class SignUp extends HttpServlet {
 
     @Override
     protected void doPost (HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        HttpSession session = req.getSession();
         try {
             // read customer info from form data
             String fullname = req.getParameter("fullname");
@@ -55,11 +54,10 @@ public class SignUp extends HttpServlet {
             customerDao.addCustomer(customer);
 
             // send to main page for customer
-            RequestDispatcher dispatcher = req.getRequestDispatcher("/personal-cabinet");
-            dispatcher.forward(req, resp);
+           resp.sendRedirect("/personal-cabinet");
         } catch (InputMismatchException e) {
             System.out.println("Error: " + e.getMessage());
-
+            HttpSession session = req.getSession();
             session.setAttribute("ERROR", "User with such email already exists");
             resp.sendRedirect(SIGN_UP_PAGE);
         }

@@ -9,11 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d533b16-076b-4204-9985-cbc94f100165" name="Changes" comment="">
+    <list default="true" id="3d533b16-076b-4204-9985-cbc94f100165" name="Changes" comment="Fixed bugs with registrations">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/my/store/controller/SignUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/my/store/controller/SignUp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/my/store/controller/WelcomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/my/store/controller/WelcomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/sign-up-form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/sign-up-form.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/welcome-page.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/welcome-page.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -215,6 +213,14 @@
       <workItem from="1662829185660" duration="7331000" />
       <workItem from="1662836611246" duration="1654000" />
     </task>
+    <task id="LOCAL-00001" summary="Fixed bugs with registrations">
+      <created>1662923506319</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1662923506319</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -230,5 +236,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Fixed bugs with registrations" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed bugs with registrations" />
   </component>
 </project>

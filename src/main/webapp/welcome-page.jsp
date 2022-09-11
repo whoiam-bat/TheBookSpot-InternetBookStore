@@ -23,8 +23,8 @@
         </form>
     </div>
     <div class="header_personal">
-        <a href="Store/sign-up" title="Sign up"><i class="fa fa-solid fa-user-plus"></i></a>
-        <a href="Store/sign-in" title="Sign in"><i class="fa fa-sign-in fa-lg"></i></a>
+        <a href="${pageContext.request.contextPath}/sign-up" title="Sign up"><i class="fa fa-solid fa-user-plus"></i></a>
+        <a href="${pageContext.request.contextPath}/sign-in" title="Sign in"><i class="fa fa-sign-in fa-lg"></i></a>
     </div>
 </header>
 
