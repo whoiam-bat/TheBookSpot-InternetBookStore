@@ -6,7 +6,6 @@ import com.my.store.model.Book;
 import com.my.store.model.Customer;
 
 import javax.annotation.Resource;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -18,7 +17,6 @@ import java.util.List;
 
 @WebServlet("/personal-cabinet")
 public class PersonalCabinet extends HttpServlet {
-    private CustomerDao customerDao;
     private BookStockDao bookStockDao;
 
     @Resource(name="store")
@@ -29,7 +27,6 @@ public class PersonalCabinet extends HttpServlet {
     public void init() {
         // create our db util ... and pass in the connection pool / datasource
         try {
-            customerDao = new CustomerDao(dataSource);
             bookStockDao = new BookStockDao(dataSource);
         } catch (Exception e) {
             e.printStackTrace();
@@ -37,22 +34,20 @@ public class PersonalCabinet extends HttpServlet {
     }
 
     @Override
-    protected void doPost (HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Customer customer = (Customer) req.getAttribute("CUSTOMER_CABINET");
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        // get customer from session attribute
+        Customer customer = (Customer) req.getSession().getAttribute("CUSTOMER");
 
-        // get books from db util
+        // create booklist
         List<Book> bookList = bookStockDao.listBooks();
 
-        // set attribute
         req.setAttribute("BOOK_LIST", bookList);
 
-        // forward request response to cabinet.jsp
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/cabinet.jsp");
-        dispatcher.forward(req, resp);
+        req.getRequestDispatcher("cabinet.jsp").forward(req, resp);
     }
 
-
-
-
-
+    @Override
+    protected void doPost (HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        System.out.println(this.getClass().getSimpleName() + "#doPost");
+    }
 }

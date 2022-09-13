@@ -1,22 +1,24 @@
 package com.my.store.controller;
 
+import com.my.store.dao.BookStockDao;
 import com.my.store.dao.CustomerDao;
 import com.my.store.model.Customer;
 
-import java.io.*;
-import java.util.InputMismatchException;
 import javax.annotation.Resource;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
+import java.io.IOException;
+import java.util.InputMismatchException;
 
-@WebServlet("/sign-up")
-public class SignUp extends HttpServlet {
-    private static final String SIGN_UP_PAGE = "sign-up-form.jsp";
-   private CustomerDao customerDao;
-
+@WebServlet("/sign-in")
+public class SignIn extends HttpServlet {
+    private static final String SIGN_IN_PAGE = "sign-in-form.jsp";
+    private CustomerDao customerDao;
     @Resource(name="store")
     private DataSource dataSource;
 
@@ -29,30 +31,25 @@ public class SignUp extends HttpServlet {
             e.printStackTrace();
         }
     }
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher(SIGN_UP_PAGE).forward(req, resp);
+        req.getRequestDispatcher(SIGN_IN_PAGE).forward(req, resp);
     }
 
     @Override
-    protected void doPost (HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
 
         try {
             // read customer info from form data
-            String fullname = req.getParameter("fullname");
             String email = req.getParameter("email");
             String password = req.getParameter("password");
 
             // create a new customer object
-            Customer customer = new Customer(fullname, email, password);
+            Customer customer = new Customer(email, password);
 
             // if user already exists in database
-            isUserAlreadyExists(customer);
-
-            // add the customer to the database
-            customerDao.addCustomer(customer);
+            isUserNotExists(customer);
 
             // get customer from db
             customer = customerDao.searchCustomer(email, password);
@@ -63,13 +60,13 @@ public class SignUp extends HttpServlet {
 
         } catch (InputMismatchException e) {
             System.out.println("Error: " + e.getMessage());
-            session.setAttribute("ERROR", "User with such email already exists");
-            resp.sendRedirect(SIGN_UP_PAGE);
+            session.setAttribute("ERROR", "User with such email doesn't exist");
+            resp.sendRedirect(SIGN_IN_PAGE);
         }
     }
 
-    private void isUserAlreadyExists(Customer customer) throws InputMismatchException {
-        if (customerDao.searchCustomer(customer.getEmail(), customer.getPassword()) != null)
+    private void isUserNotExists(Customer customer) throws InputMismatchException {
+        if (customerDao.searchCustomer(customer.getEmail(), customer.getPassword()) == null)
             throw new InputMismatchException();
     }
 }

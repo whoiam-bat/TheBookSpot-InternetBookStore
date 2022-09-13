@@ -50,7 +50,6 @@
       <tr>
         <td><label></label></td>
         <td><input type="submit" value="Sign up" class="signUp"/></td>
-        <td><input type="hidden" name="command" value="LIST"/></td>
       </tr>
       </tbody>
     </table>

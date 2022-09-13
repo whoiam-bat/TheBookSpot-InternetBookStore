@@ -5,13 +5,32 @@
   Time: 9:09 PM
   To change this template use File | Settings | File Templates.
 --%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>Sign in</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
 </head>
 <body>
-<form action="personal-cabinet" method="post">
+
+<c:if test="${sessionScope.ERROR != null}">
+    <c:set var="errMessage" value="${sessionScope.ERROR}" scope="page"/>
+</c:if>
+
+<%
+    session.removeAttribute("ERROR");
+%>
+
+
+<form action="sign-in" method="post">
     <table>
+        <c:if test="${errMessage != null}">
+            <div class="alert alert-danger alert-dismissible" role="alert">
+                <strong>Warning!</strong> ${errMessage}
+                <a href="${pageContext.request.contextPath}/sign-up">Sign up</a>
+            </div>
+        </c:if>
+
         <tbody>
         <tr>
             <td><label for="email">Email:</label></td>
@@ -26,7 +45,6 @@
         <tr>
             <td><label></label></td>
             <td><input type="submit" value="Sign in" class="signIn"/></td>
-            <td><input type="hidden" name="command" value="LIST"/></td>
         </tr>
         </tbody>
     </table>

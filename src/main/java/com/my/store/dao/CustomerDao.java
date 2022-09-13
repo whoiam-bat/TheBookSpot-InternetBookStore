@@ -111,7 +111,11 @@ public class CustomerDao {
             ResultSet rs = pstmt.executeQuery();
 
             if(rs.next()) {
-                res = new Customer(rs.getString("email"), rs.getString("password"));
+                res = new Customer(rs.getInt("id"),
+                        rs.getString("fullname"),
+                        rs.getString("email"),
+                        rs.getString("password"),
+                        rs.getInt("role_id"));
             }
 
         } catch (SQLException e) {

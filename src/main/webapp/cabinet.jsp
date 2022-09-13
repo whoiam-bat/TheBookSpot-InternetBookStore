@@ -20,8 +20,6 @@
     </div>
     <div class="header_search">
         <form action="personal-cabinet" method="get">
-            <input type="hidden" name="command" value="SEARCH_BY_TITLE"/>
-
             <input type="text" name="title" placeholder="Search" class="search-field"/>
             <input type="submit" value title="Search" class="submit"/>
             <span><i class="fa fa-thin fa-magnifying-glass"></i></span>
@@ -36,7 +34,7 @@
 
 <div class="col-products">
     <div class="col-wrapper">
-        <c:forEach var="it" items="${BOOK_LIST}">
+        <c:forEach var="it" items="${requestScope.BOOK_LIST}">
             <div class="item" style="width: 359px;">
                 <div class="product" id=${it.id}>
                     <a href="#" class="product_media_wrapper" title="${it.title}">
