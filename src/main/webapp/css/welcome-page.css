@@ -1,144 +1,191 @@
-html {
-    width: 100%;
-    height: 100%;
-    background: #ededed;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+:root {
+    --dark-grey: #212529;
+    --white: #fff;
+    --light-grey: #6c757d;
+    --yellow: #ffd332;
+    --dark-yellow: #b08100;
+    --dark-black: #000;
+    --light-black: #666;
+    --border: .1rem solid var(--light-grey);
+    --border-hover: .1rem solid var(--yellow);
+    --background: #303738;
 }
 
-body{
-    margin: 0;
-}
-
-header {
-    background: #7682cc;
-    width: 100%;
-    height: 10%;
-}
-
-.header_search {
-    position: absolute;
-    padding: 0 10px 0 30px;
-}
-
-.header_personal {
-    width: 50px;
-    position: relative;
-    padding: 0;
-    margin-right: 20px;
-    margin-left: 300px;
-    text-align: right;
-}
-
-.header_personal a {
-    background: #7682cc;
-    border-radius: 100%;
-    color: #454545;
-    cursor: pointer;
-    font-size: 20px;
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    outline: none; border: none;
     text-decoration: none;
-    transition: all 0.4s ease-in-out;
-    width: 45px;
-    height: 45px;
-    line-height: 45px;
+    text-transform: capitalize;
+    transition:all, .2s linear;
+    transition:width, none;
+}
+a {
+    text-decoration: none;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding: 5rem;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+    width: 1rem;
+}
+
+html::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+    background:var(--light-black);
+}
+
+section {
+    padding: 5rem 9%;
+}
+
+/* Start header section */
+.header .header1 {
+    background: var(--dark-grey);
+    padding: 1.5rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .header1 .logo {
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: var(--yellow);
+}
+.header .header1 .logo i{
+    color: var(--yellow);
+}
+
+.header .header1 .search-form {
+    width: 50rem;
+    height:5rem;
+    overflow: hidden;
+    border: var(--border);
+    display: flex;
+    align-items: center;
+    border-radius: .5rem;
+}
+
+.header .header1 .search-form input {
+    font-size: 1.6rem;
+    padding: 0 1.2rem;
+    height: 100%;
+    width: 100%;
+    text-transform: none;
+    background: var(--dark-grey);
+    color: var(--white);
+}
+
+.header .header1 .personal div, .header .header1 .personal a {
+    font-size: 2.5rem;
+    margin-left: 1.5rem;
+    color: var(--white);
+    cursor: pointer;
+}
+.header .header1 .personal div:hover, .header .header1 .personal a:hover {
+    color: var(--yellow);
+}
+
+.header .header2 {
+    background: var(--yellow);
     text-align: center;
-    vertical-align: middle;
-    position: relative;
-    top: 0;
-    margin: 0 6px 10px 6px;
 }
 
-.header_personal a:hover {
-    color: #ffffff;
+.header .header2 .navbar {
+    padding-top: 0;
+    padding-bottom: 0;
+    display: inline-block;
 }
 
-
-
-/*---------------------------------------
-  Display each book
------------------------------------------*/
-
-.product {
-    height: 610px;
-    padding: 22px 15px 25px;
-    -webkit-transition: border-color .25s ease-out;
-    transition: border-color .25s ease-out;
-    color: #acacac;
-    border-top: 5px solid transparent;
-    border-right: 1px solid #ededed;
-    border-bottom: 1px solid #ededed;
+.header .header2 .navbar a {
+    color: var(--dark-black);
+    display: inline-block;
+    padding: 1.2rem;
+    font-size: 1.7rem;
 }
 
-.product_media_wrapper {
+.header .header2 .navbar a:hover {
+    background: var(--dark-yellow);
+}
+
+.header .header2.active {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+}
+/* End header section */
+
+
+/* Home section */
+.home {
+    background-color: var(--background);
+}
+
+.home .row {
+    background-color: var(--white);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    gap: 1.5rem;
+}
+
+.home .row .item {
+    text-align: center;
+}
+
+.home .row .item .product-media-ref {
     position: relative;
     display: block;
-    height: 355px;
-    margin-bottom: 20px;
+    height: 300px;
+    width: 200px;
+
+    margin-left: 10rem;
 }
 
-.product_media {
-    position: absolute;
+.home .row .item .product-media-ref .product-media {
+    height: 300px;
+    width: 200px;
+    position: relative;
     top: 50%;
     left: 50%;
     max-width: 100%;
     max-height: 100%;
-
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
 
-.product_name {
-    display: block;
-    font-size: 16px;
-    line-height: 1.1;
-    height: 45px;
-    margin-bottom: 11px;
-    color: #000;
-    margin-top: 10px;
-}
 
-.product_author {
-    font-size: 16px;
-    line-height: 1;
-    height: 18px;
-    margin-bottom: 11px;
-    text-overflow: ellipsis;
-    color: #626262;
-}
+/* Searching */
 
-.product_price {
-    float: left;
-    text-align: center;
-}
-
-.product_price_current {
-    font-size: 18px;
-    line-height: 1;
-    text-align: left;
-    color: #bf0830;
-}
-
-.item {
-    -webkit-transform: translate3d(0,0,0);
-    -moz-transform: translate3d(0,0,0);
-    -ms-transform: translate3d(0,0,0);
-    float: left;
+.autocomplete-items {
+    position: absolute;
+    max-height: 300px;
+    overflow-y: auto;
+    font-size: 1.6rem;
+    border: var(--border);
+    border-radius: 5px;
+    z-index: 99;
+    top: 9%; left: 35.7%; right: 30.7%;
+    background-color: var(--dark-grey);
+    color: var(--white);
+    padding: 10px;
+    cursor: pointer;
 }
 
 
-@media (min-width: 768px) {
-    .col-products {
-        float: left;
-        width: 100%;
-
-        position: relative;
-        min-height: 1px;
-        padding-right: 15px;
-        padding-left: 15px;
-    }
-}
-
-.col-wrapper {
-    overflow: hidden;
-    position: relative;
-    width: 100%;
+/*when hovering an item:*/
+.autocomplete-items div:hover {
+    color: var(--yellow);
+    font-size: 1.7rem;
 }

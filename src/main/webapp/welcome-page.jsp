@@ -3,46 +3,61 @@
 
 <html>
 <head>
-    <title>Document</title>
+    <title>The Book Spot</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
+
     <link rel="stylesheet" href="css/welcome-page.css">
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script type="text/javascript" src="javascript/script.js"></script>
 </head>
 <body>
 
 <header class="header">
-    <div class="header_catalog">
-    </div>
-    <div class="header_search">
-        <form action="starting-page" method="get">
-            <input type="text" name="title" placeholder="Search" class="search-field"/>
-            <input type="submit" value title="Search" class="submit"/>
-            <span><i class="fa-thin fa-magnifying-glass"></i></span>
+    <div class="header1">
+        <a href="#" class="logo"><i class="fas fa-book"></i> the book spot</a>
+        <form class="search-form" autocomplete="off">
+            <input type="search" id="search-field" name="myBook" placeholder="Search..."/>
         </form>
+
+        <div class="personal">
+            <a href="${pageContext.request.contextPath}/shopping-cart.jsp" class="fas fa-shopping-cart"
+               title="Shopping cart"></a>
+            <a href="${pageContext.request.contextPath}/sign-in" class="fas fa-user" title="Sign in"></a>
+            <a href="${pageContext.request.contextPath}/sign-up" class="fas fa-user-plus" title="Sign up"></a>
+        </div>
     </div>
-    <div class="header_personal">
-        <a href="${pageContext.request.contextPath}/sign-up" title="Sign up"><i class="fa fa-solid fa-user-plus"></i></a>
-        <a href="${pageContext.request.contextPath}/sign-in" title="Sign in"><i class="fa fa-sign-in fa-lg"></i></a>
+
+    <div class="header2">
+        <nav class="navbar">
+            <a href="#home">home</a>
+            <a href="#featured">featured</a>
+            <a href="#arrivals">arrivals</a>
+            <a href="#reviews">reviews</a>
+            <a href="#blogs">blogs</a>
+        </nav>
     </div>
 </header>
 
-    <div class="col-products">
-        <div class="col-wrapper">
-            <c:forEach var="it" items="${requestScope.BOOK_LIST}">
-                <div class="item" style="width: 359px;">
-                    <div class="product" id=${it.id}>
-                        <a href="#" class="product_media_wrapper" title="${it.title}">
-                            <img data-src="${it.imagePATH}" class="product_media" alt="${it.title}" src="${it.imagePATH}">
-                        </a>
-                        <a href="#" class="product_name" title="${it.title}">${it.title}</a>
-                        <div class="product_author">${it.author}</div>
-                        <div class="product_price">
-                            <div class="product_price_current">${it.price}$</div>
-                        </div>
-                    </div>
-                </div>
-            </c:forEach>
-        </div>
+<section class="home" id="home">
+    <div class="row">
+        <c:forEach var="it" items="${requestScope.BOOK_LIST}">
+            <div class="item" id=${it.id}>
+                <a href="#" class="product-media-ref" title="${it.title}">
+                    <img data-src="${it.imagePATH}" class="product-media" alt="${it.title}"
+                         src="${it.imagePATH}">
+                </a>
+                <a href="#" class="product-name" title="${it.title}">${it.title}</a>
+                <div class="product-author">${it.author}</div>
+                <div class="product-price">${it.price}$</div>
+                <form action="shopping-cart" method="get">
+                    <input type="hidden" name="BOOK_ID" value="${it.id}">
+                    <button type="submit" class="btn">Add to cart</button>
+                </form>
+            </div>
+        </c:forEach>
     </div>
+</section>
+<script type="text/javascript" src="javascript/search.js"></script>
 </body>
 </html>

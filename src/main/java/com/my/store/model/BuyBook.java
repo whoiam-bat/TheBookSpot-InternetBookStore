@@ -1,23 +1,28 @@
 package com.my.store.model;
 
-public class OrderHasBook {
+public class BuyBook {
     private int id;
 
-    private int orderID;
+    private int buyID;
 
     private int bookID;
 
     private int amount;
 
-    public OrderHasBook(int id, int orderID, int bookID, int amount) {
+    public BuyBook(int id, int buyID, int bookID, int amount) {
         this.id = id;
-        this.orderID = orderID;
+        this.buyID = buyID;
         this.bookID = bookID;
         this.amount = amount;
     }
 
-    public OrderHasBook(int orderID, int bookID, int amount) {
-        this.orderID = orderID;
+    public BuyBook(int buyID, int bookID, int amount) {
+        this.buyID = buyID;
+        this.bookID = bookID;
+        this.amount = amount;
+    }
+
+    public BuyBook(int bookID, int amount) {
         this.bookID = bookID;
         this.amount = amount;
     }
@@ -30,12 +35,12 @@ public class OrderHasBook {
         this.id = id;
     }
 
-    public int getOrderID() {
-        return orderID;
+    public int getBuyID() {
+        return buyID;
     }
 
-    public void setOrderID(int orderID) {
-        this.orderID = orderID;
+    public void setBuyID(int orderID) {
+        this.buyID = orderID;
     }
 
     public int getBookID() {
@@ -58,7 +63,7 @@ public class OrderHasBook {
     public String toString() {
         return "OrderHasBook{" +
                 "id=" + id +
-                ", orderID=" + orderID +
+                ", buyID=" + buyID +
                 ", bookID=" + bookID +
                 ", amount=" + amount +
                 '}';

@@ -6,7 +6,6 @@ import com.my.store.model.Customer;
 import java.io.*;
 import java.util.InputMismatchException;
 import javax.annotation.Resource;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;

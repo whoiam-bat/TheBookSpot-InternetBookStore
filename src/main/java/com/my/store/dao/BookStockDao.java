@@ -9,11 +9,9 @@ import java.util.*;
 public class BookStockDao {
     private final DataSource dataSource;
 
-
     public BookStockDao(DataSource dataSource) {
         this.dataSource = dataSource;
     }
-
 
     public List<Book> listBooks() {
         List<Book> bookList = new ArrayList<>();
@@ -125,24 +123,20 @@ public class BookStockDao {
         }
     }
 
-    public void updateBook(Book book) {
+    public void updateAmountBook(int id, int amount) {
         try(
                 Connection con = dataSource.getConnection();
                 PreparedStatement pstmt = con.prepareStatement(
-                        "UPDATE book SET title=?, author=?, genre=?, price=?, amount=?, image=?" +
+                        "UPDATE book SET amount=amount - ?" +
                                 " WHERE id=?;");) {
 
-            pstmt.setString(1, book.getTitle());
-            pstmt.setString(2, book.getAuthor());
-            pstmt.setString(3, book.getGenre());
-            pstmt.setFloat(4, book.getPrice());
-            pstmt.setInt(5, book.getAmount());
-            pstmt.setString(6, book.getImagePATH());
-            pstmt.setInt(7, book.getId());
+            pstmt.setInt(1, amount);
+            pstmt.setInt(2, id);
 
             pstmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
+
 }

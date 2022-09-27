@@ -1,7 +1,7 @@
 package com.my.store.controller;
 
 import com.my.store.dao.BookStockDao;
-import com.my.store.dao.CustomerDao;
+import com.my.store.dao.BuyDao;
 import com.my.store.model.Book;
 import com.my.store.model.Customer;
 
@@ -35,8 +35,13 @@ public class PersonalCabinet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        // get customer from session attribute
-        Customer customer = (Customer) req.getSession().getAttribute("CUSTOMER");
+
+        // change default role of user
+        req.getSession().removeAttribute("ROLE");
+        System.out.println(req.getSession().getAttribute("CUSTOMER"));
+        int role = ((Customer) req.getSession().getAttribute("CUSTOMER")).getRoleID();
+        req.getSession().setAttribute("ROLE", role);
+
 
         // create booklist
         List<Book> bookList = bookStockDao.listBooks();
@@ -48,6 +53,6 @@ public class PersonalCabinet extends HttpServlet {
 
     @Override
     protected void doPost (HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println(this.getClass().getSimpleName() + "#doPost");
+        System.out.println("PersonalCabinet.doPost");
     }
 }

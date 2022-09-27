@@ -9,14 +9,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d533b16-076b-4204-9985-cbc94f100165" name="Changes" comment="Fixed registration bugs">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/my/store/controller/SignIn.java" afterDir="false" />
+    <list default="true" id="3d533b16-076b-4204-9985-cbc94f100165" name="Changes" comment="Sign up/Sign in has been fixed successfully">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/my/store/controller/ShoppingCart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/my/store/dao/BuyDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/confirm-order.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/authentication.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/cart.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/javascript/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/javascript/search.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/javascript/sign-up-validator.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/shopping-cart.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/templates/backgrounds/main-back.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/store_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/store_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/my/store/controller/PersonalCabinet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/my/store/controller/PersonalCabinet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/my/store/controller/SignIn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/my/store/controller/SignIn.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/my/store/controller/SignUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/my/store/controller/SignUp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/my/store/dao/CustomerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/my/store/dao/CustomerDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/META-INF/context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/META-INF/context.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/my/store/controller/WelcomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/my/store/controller/WelcomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/my/store/dao/BookStockDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/my/store/dao/BookStockDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/my/store/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/my/store/model/Buy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/my/store/model/OrderHasBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/my/store/model/BuyBook.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/cabinet.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/cabinet.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/welcome-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/welcome-page.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/sign-in-form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/sign-in-form.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/sign-up-form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/sign-up-form.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/welcome-page.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/welcome-page.jsp" afterDir="false" />
@@ -35,9 +51,42 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="master" />
+              </list>
+            </value>
+          </entry>
+          <entry type="REMOTE">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="origin/master" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="detour-store" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="detour-store" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -65,7 +114,11 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/мусор/Програмування/Java_3_курс/Lab_1/temp/test&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/My Folder/Programming/Java/EPAM/Final Project/Internet store/store&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -76,6 +129,8 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\My Folder\Programming\Java\EPAM\Final Project\Internet store\store\src\main\webapp\WEB-INF\lib" />
+      <recent name="D:\мусор\Програмування\Java\ЄБУМ\Final Project\Internet store\store\src\main\webapp\templates\backgrounds" />
       <recent name="D:\мусор\Програмування\Java\ЄБУМ\Final Project\Internet store\store\src\main\webapp\WEB-INF\templates\book_img" />
       <recent name="D:\мусор\Програмування\Java\ЄБУМ\Final Project\Internet store\store\src\main\webapp\WEB-INF\fonst" />
       <recent name="D:\мусор\Програмування\Java\ЄБУМ\Final Project\Internet store\store\src\main\webapp\WEB-INF\lib" />
@@ -89,6 +144,7 @@
   <component name="RunManager">
     <configuration name="Tomcat 9.0.651" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.651" ALTERNATIVE_JRE_ENABLED="false">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/Store" />
+      <option name="UPDATING_POLICY" value="update-resources" />
       <deployment>
         <artifact name="store:war exploded">
           <settings>
@@ -224,7 +280,83 @@
       <workItem from="1662987302681" duration="646000" />
       <workItem from="1663006605444" duration="2629000" />
       <workItem from="1663057182546" duration="6449000" />
-      <workItem from="1663064591067" duration="1804000" />
+      <workItem from="1663064591067" duration="6671000" />
+      <workItem from="1663072126804" duration="5102000" />
+      <workItem from="1663080614792" duration="700000" />
+      <workItem from="1663085221624" duration="7382000" />
+      <workItem from="1663092991904" duration="1019000" />
+      <workItem from="1663097567420" duration="23000" />
+      <workItem from="1663097592086" duration="26000" />
+      <workItem from="1663140917539" duration="7349000" />
+      <workItem from="1663149196539" duration="2389000" />
+      <workItem from="1663152132542" duration="7221000" />
+      <workItem from="1663159565282" duration="5087000" />
+      <workItem from="1663166971033" duration="3000" />
+      <workItem from="1663174334084" duration="1123000" />
+      <workItem from="1663182492106" duration="8000" />
+      <workItem from="1663222926464" duration="5275000" />
+      <workItem from="1663230412406" duration="24000" />
+      <workItem from="1663231089563" duration="2004000" />
+      <workItem from="1663243286615" duration="26000" />
+      <workItem from="1663322243265" duration="6000" />
+      <workItem from="1663329456602" duration="117000" />
+      <workItem from="1663329739673" duration="2234000" />
+      <workItem from="1663332235706" duration="1818000" />
+      <workItem from="1663345850180" duration="307000" />
+      <workItem from="1663348423834" duration="2295000" />
+      <workItem from="1663402486296" duration="474000" />
+      <workItem from="1663402986132" duration="38000" />
+      <workItem from="1663403565104" duration="2112000" />
+      <workItem from="1663413369931" duration="1016000" />
+      <workItem from="1663417630556" duration="6246000" />
+      <workItem from="1663430146011" duration="5130000" />
+      <workItem from="1663439778093" duration="3895000" />
+      <workItem from="1663480577747" duration="5240000" />
+      <workItem from="1663490650827" duration="4334000" />
+      <workItem from="1663502349770" duration="5928000" />
+      <workItem from="1663509877740" duration="6573000" />
+      <workItem from="1663518042332" duration="6627000" />
+      <workItem from="1663525617316" duration="2732000" />
+      <workItem from="1663568118572" duration="7186000" />
+      <workItem from="1663576036622" duration="24000" />
+      <workItem from="1663576213536" duration="1108000" />
+      <workItem from="1663654231864" duration="601000" />
+      <workItem from="1663663050368" duration="7453000" />
+      <workItem from="1663671950771" duration="5996000" />
+      <workItem from="1663680540607" duration="6596000" />
+      <workItem from="1663689331427" duration="716000" />
+      <workItem from="1663691573334" duration="142000" />
+      <workItem from="1663693165231" duration="72000" />
+      <workItem from="1663741268141" duration="3416000" />
+      <workItem from="1663748733856" duration="6000" />
+      <workItem from="1663755898496" duration="619000" />
+      <workItem from="1663759313794" duration="7389000" />
+      <workItem from="1663772700073" duration="2455000" />
+      <workItem from="1663786549070" duration="4251000" />
+      <workItem from="1663863947399" duration="113000" />
+      <workItem from="1663913838837" duration="3565000" />
+      <workItem from="1663919373252" duration="5832000" />
+      <workItem from="1663927381967" duration="3967000" />
+      <workItem from="1663932221025" duration="6160000" />
+      <workItem from="1663947474579" duration="1634000" />
+      <workItem from="1663953324189" duration="1732000" />
+      <workItem from="1664014023501" duration="3709000" />
+      <workItem from="1664085229374" duration="1398000" />
+      <workItem from="1664092266627" duration="166000" />
+      <workItem from="1664096260834" duration="3011000" />
+      <workItem from="1664115897493" duration="2732000" />
+      <workItem from="1664123699358" duration="1273000" />
+      <workItem from="1664130572228" duration="9000" />
+      <workItem from="1664130922200" duration="850000" />
+      <workItem from="1664171221885" duration="629000" />
+      <workItem from="1664183432372" duration="326000" />
+      <workItem from="1664189556872" duration="20000" />
+      <workItem from="1664189611691" duration="16000" />
+      <workItem from="1664202986411" duration="4161000" />
+      <workItem from="1664279598321" duration="5180000" />
+      <workItem from="1664288363723" duration="3008000" />
+      <workItem from="1664294618325" duration="5970000" />
+      <workItem from="1664301986704" duration="2590000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed bugs with registrations">
       <created>1662923506319</created>
@@ -233,7 +365,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662923506319</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Sign up/Sign in has been fixed successfully">
+      <created>1663066527928</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1663066527928</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,6 +391,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fixed bugs with registrations" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed bugs with registrations" />
+    <MESSAGE value="Sign up/Sign in has been fixed successfully" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sign up/Sign in has been fixed successfully" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

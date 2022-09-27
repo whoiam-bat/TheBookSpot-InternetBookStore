@@ -1,7 +1,6 @@
 package com.my.store.controller;
 
 import com.my.store.dao.BookStockDao;
-import com.my.store.dao.CustomerDao;
 import com.my.store.model.Book;
 
 import javax.annotation.Resource;
@@ -31,6 +30,13 @@ public class WelcomePage extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession();
+
+        session.removeAttribute("ROLE");
+        session.removeAttribute("CUSTOMER");
+
+
+        session.setAttribute("ROLE", 4);
 
         // get books from db util
         List<Book> bookList = bookStockDao.listBooks();
