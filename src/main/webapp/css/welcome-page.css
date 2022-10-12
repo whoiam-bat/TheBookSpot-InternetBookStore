@@ -4,6 +4,7 @@
     --dark-grey: #212529;
     --white: #fff;
     --light-grey: #6c757d;
+    --lighter-grey: #99a3a9;
     --yellow: #ffd332;
     --dark-yellow: #b08100;
     --dark-black: #000;
@@ -87,7 +88,16 @@ section {
     background: var(--dark-grey);
     color: var(--white);
 }
-
+.header .header1 .personal p {
+    position: relative;
+    left: 37px; top:17px;
+    font-size: 1.2rem;
+    text-align: center;
+    color: var(--dark-black);
+    width: 15px; height: 15px;
+    border-radius: 15%;
+    background-color: var(--yellow);
+}
 .header .header1 .personal div, .header .header1 .personal a {
     font-size: 2.5rem;
     margin-left: 1.5rem;
@@ -131,29 +141,26 @@ section {
 /* Home section */
 .home {
     background-color: var(--background);
+    display: block;
 }
-
-.home .row {
-    background-color: var(--white);
+.row {
+    background-color: var(--dark-grey);
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr;
-    gap: 1.5rem;
+    grid-template-columns: repeat(4, 308px);
+    grid-template-rows: 50rem;
 }
 
 .home .row .item {
-    text-align: center;
+    color: var(--white);
+    display: grid;
+    grid-template-rows: 35rem 10rem 5rem;
+    justify-items: center;
 }
 
 .home .row .item .product-media-ref {
     position: relative;
     display: block;
-    height: 300px;
-    width: 200px;
-
-    margin-left: 10rem;
 }
-
 .home .row .item .product-media-ref .product-media {
     height: 300px;
     width: 200px;
@@ -165,7 +172,45 @@ section {
     transform: translate(-50%, -50%);
 }
 
+.home .row .item .product-name-author {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 4rem 3rem;
+    font-size: 14px;
+    width: 200px;
+}
+.home .row .item .product-name-author a{
+    text-decoration: none;
+    color: var(--white);
+}
+.home .row .item .product-name-author .product-author{
+    color: var(--lighter-grey);
+}
 
+.home .row .item .product-price{
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 100px auto;
+    font-size: 14px;
+}
+.home .row .item .product-price .price{
+    font-size: 2rem;
+    color: var(--yellow);
+}
+.home .row .item .product-price .buy-form .btn{
+    border: 1px solid var(--lighter-grey);
+    color: var(--lighter-grey);
+    width: 100%; height: 100%;
+    font-size: 2rem;
+}
+.home .row .item .product-price .buy-form .btn:hover {
+    border: 1px solid var(--yellow);
+    color: var(--dark-black);
+    background-color: var(--yellow);
+}
 /* Searching */
 
 .autocomplete-items {
@@ -182,7 +227,6 @@ section {
     padding: 10px;
     cursor: pointer;
 }
-
 
 /*when hovering an item:*/
 .autocomplete-items div:hover {

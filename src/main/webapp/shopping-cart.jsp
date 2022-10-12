@@ -31,7 +31,6 @@
                     <th>Amount</th>
                     <th>Price</th>
                     <th></th>
-                    <th></th>
                 </tr>
             </thead>
 
@@ -40,7 +39,9 @@
                     <tr class="item">
                         <td class="title">${it.value.title}</td>
                         <td class="author">${it.value.author}</td>
-                        <td class="price-per-item">$${it.value.price}</td>
+                        <td class="price-per-item">
+                            $<ftmt:formatNumber type="number" maxFractionDigits="2" value="${it.value.price}"/>
+                        </td>
                         <td class="amount">
                             <c:url var="increment" value="shopping-cart">
                                 <c:param name="command" value="INCREMENT" />
@@ -65,8 +66,8 @@
                             $<ftmt:formatNumber type="number" maxFractionDigits="2" value="${it.value.price * it.key.amount}"/>
                         </td>
                         <td class="remove">
-                            <form action="shopping-cart" method="post">
-                                <input type="hidden" name="command" value="REMOVE-ITEM">
+                            <form action="${pageContext.request.contextPath}/shopping-cart" method="post">
+                                <input type="hidden" name="command" value="REMOVE_ITEM">
                                 <input type="hidden" name="item" value="${it.value}">
                                 <input type="submit" value="Remove from cart" class="button">
                             </form>

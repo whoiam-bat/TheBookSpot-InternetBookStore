@@ -1,5 +1,6 @@
 package com.my.store.controller;
 
+import com.my.store.WriteXMLUtil;
 import com.my.store.dao.BookStockDao;
 import com.my.store.model.Book;
 
@@ -14,6 +15,7 @@ import java.util.List;
 @WebServlet("/starting-page")
 public class WelcomePage extends HttpServlet {
     private BookStockDao bookStockDao;
+    private WriteXMLUtil xmlUtil;
 
     @Resource(name="store")
     private DataSource dataSource;
@@ -23,6 +25,7 @@ public class WelcomePage extends HttpServlet {
         // create our db util ... and pass in the connection pool / datasource
         try {
             bookStockDao = new BookStockDao(dataSource);
+            xmlUtil = WriteXMLUtil.newInstance();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -40,6 +43,9 @@ public class WelcomePage extends HttpServlet {
 
         // get books from db util
         List<Book> bookList = bookStockDao.listBooks();
+
+        // Write xml file with book titles
+        xmlUtil.writeXML(bookList);
 
         // add books to the request
         request.setAttribute("BOOK_LIST", bookList);

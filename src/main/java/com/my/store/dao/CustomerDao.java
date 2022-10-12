@@ -44,9 +44,9 @@ public class CustomerDao {
         try (
                 Connection con = dataSource.getConnection();
                 PreparedStatement pstmt = con.prepareStatement(
-                        "DELETE FROM customer WHERE fullname LIKE ?;")) {
+                        "DELETE FROM customer WHERE customer.email LIKE ?;")) {
 
-            pstmt.setString(1, customer.getFullName());
+            pstmt.setString(1, customer.getEmail());
 
             pstmt.executeUpdate();
         } catch (SQLException e) {
@@ -54,22 +54,26 @@ public class CustomerDao {
         }
     }
 
-    public List<Customer> customerList() {
+    public List<Customer> customerList(int role) {
         List<Customer> customerList = new ArrayList<>();
 
         try (
                 Connection con = dataSource.getConnection();
-                Statement stmt = con.createStatement();
-                ResultSet rs = stmt.executeQuery("SELECT * FROM customer;")) {
+                PreparedStatement stmt = con.prepareStatement("SELECT * FROM customer\n" +
+                        "    JOIN role ON customer.role_id = role.id\n" +
+                        "    WHERE role_id>=? ORDER BY customer.role_id;")) {
+            stmt.setInt(1, role);
 
+            ResultSet rs = stmt.executeQuery();
             while(rs.next()) {
                 int id = rs.getInt("id");
                 String fullName = rs.getString("fullname");
                 String email = rs.getString("email");
                 String password = rs.getString("password");
                 int roleID = rs.getInt("role_id");
+                String roleName = rs.getString("name_role");
 
-                Customer temp = new Customer(id, fullName,email, password, roleID);
+                Customer temp = new Customer(id, fullName,email, password, roleID, roleName);
 
                 customerList.add(temp);
             }
@@ -84,14 +88,12 @@ public class CustomerDao {
         try(
                 Connection con = dataSource.getConnection();
                 PreparedStatement pstmt = con.prepareStatement(
-                        "UPDATE customer SET fullname=?, email=?, password=?, role_id=?" +
+                        "UPDATE customer SET role_id=?" +
                 " WHERE id=?;");
                 ) {
-            pstmt.setString(1, customer.getFullName());
-            pstmt.setString(2, customer.getEmail());
-            pstmt.setString(3, customer.getPassword());
-            pstmt.setInt(4, customer.getRoleID());
-            pstmt.setInt(5, customer.getId());
+
+            pstmt.setInt(1, customer.getRoleID());
+            pstmt.setInt(2, customer.getId());
 
             pstmt.executeUpdate();
         } catch (SQLException e) {
@@ -103,7 +105,9 @@ public class CustomerDao {
         Customer res = null;
         try(
                 Connection con = dataSource.getConnection();
-                PreparedStatement pstmt = con.prepareStatement("SELECT * FROM customer WHERE email=? AND password=?;");
+                PreparedStatement pstmt = con.prepareStatement("SELECT * FROM customer\n" +
+                        "    JOIN role ON customer.role_id = role.id\n" +
+                        "    WHERE email=? AND password=?;");
         ) {
             pstmt.setString(1, email);
             pstmt.setString(2, password);
@@ -115,7 +119,36 @@ public class CustomerDao {
                         rs.getString("fullname"),
                         rs.getString("email"),
                         rs.getString("password"),
-                        rs.getInt("role_id"));
+                        rs.getInt("role_id"),
+                        rs.getString("name_role"));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return res;
+    }
+    public List<Customer> searchCustomer(String email) {
+        List<Customer> res = new ArrayList<>();
+        try(
+                Connection con = dataSource.getConnection();
+                PreparedStatement pstmt = con.prepareStatement("SELECT * " +
+                        "FROM customer\n" +
+                        "    JOIN role ON customer.role_id = role.id\n" +
+                        "    WHERE email=? ORDER BY customer.id;");
+        ) {
+            pstmt.setString(1, email);
+
+            ResultSet rs = pstmt.executeQuery();
+
+            if(rs.next()) {
+                res.add(new Customer(rs.getInt("id"),
+                        rs.getString("fullname"),
+                        rs.getString("email"),
+                        rs.getString("password"),
+                        rs.getInt("role_id"),
+                        rs.getString("name_role")));
             }
 
         } catch (SQLException e) {

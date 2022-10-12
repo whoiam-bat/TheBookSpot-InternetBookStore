@@ -42,7 +42,7 @@ public class ShoppingCart extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        addBookIntoCart(req, resp);
+        req.getRequestDispatcher("shopping-cart.jsp").forward(req, resp);
     }
 
     @Override
@@ -54,7 +54,7 @@ public class ShoppingCart extends HttpServlet {
                 submitOrder(req, resp);
                 break;
             }
-            case "REMOVE-ITEM": {
+            case "REMOVE_ITEM": {
                 removeItem(req, resp);
                 break;
             }
@@ -64,6 +64,10 @@ public class ShoppingCart extends HttpServlet {
             }
             case "DECREMENT": {
                 decrement(req, resp);
+                break;
+            }
+            case "ADD_TO_CART": {
+                addBookIntoCart(req, resp);
                 break;
             }
         }
@@ -104,7 +108,6 @@ public class ShoppingCart extends HttpServlet {
                 session.setAttribute("ORDER_PRICE", orderPrice + tempBook.getPrice());
             }
         }
-
         if((int) req.getSession().getAttribute("ROLE") == 4) {
             resp.sendRedirect("starting-page");
         } else {
@@ -141,10 +144,8 @@ public class ShoppingCart extends HttpServlet {
         session.removeAttribute("ORDER_PRICE");
 
         if((int)session.getAttribute("ROLE") == 4) {
-            System.out.println("ROLE  < 4");
             resp.sendRedirect("starting-page");
         } else {
-            System.out.println("ROLE  != 4");
             resp.sendRedirect("personal-cabinet");
         }
     }
@@ -154,7 +155,8 @@ public class ShoppingCart extends HttpServlet {
 
         String item = req.getParameter("item");
 
-        Map<BuyBook, Book> cartList = (Map<BuyBook, Book>) session.getAttribute("CART_LIST");
+        Map<BuyBook, Book> cartList = (HashMap<BuyBook, Book>) session.getAttribute("CART_LIST");
+
         Iterator<Map.Entry<BuyBook, Book>> iterator = cartList.entrySet().iterator();
 
         session.removeAttribute("CART_LIST");
@@ -171,12 +173,12 @@ public class ShoppingCart extends HttpServlet {
                 session.setAttribute("ORDER_PRICE", price - tempPrice);
 
                 // remove book from order list
-                // remove book from order list
                 iterator.remove();
             }
         }
+
         session.setAttribute("CART_LIST", cartList);
-        resp.sendRedirect("shopping-cart.jsp");
+        resp.sendRedirect("shopping-cart");
     }
 
     private void increment(HttpServletRequest req, HttpServletResponse resp) throws IOException{
@@ -204,7 +206,7 @@ public class ShoppingCart extends HttpServlet {
                 session.setAttribute("ORDER_PRICE", price + tempPrice);
             }
         }
-        resp.sendRedirect("shopping-cart.jsp");
+        resp.sendRedirect("shopping-cart");
     }
 
     private void decrement(HttpServletRequest req, HttpServletResponse resp) throws IOException{
@@ -236,6 +238,6 @@ public class ShoppingCart extends HttpServlet {
                 }
             }
         }
-        resp.sendRedirect("shopping-cart.jsp");
+        resp.sendRedirect("shopping-cart");
     }
 }

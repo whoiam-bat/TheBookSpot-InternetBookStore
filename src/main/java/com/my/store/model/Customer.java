@@ -9,6 +9,16 @@ public class Customer {
 
     private String password;
     private int roleID;
+    private String roleName;
+
+    public Customer(int id, String fullName, String email, String password, int roleID, String roleName) {
+        this.id = id;
+        this.fullName = fullName;
+        this.email = email;
+        this.password = password;
+        this.roleID = roleID;
+        this.roleName = roleName;
+    }
 
     public Customer(int id, String fullName, String email, String password, int roleID) {
         this.id = id;
@@ -69,6 +79,14 @@ public class Customer {
         this.password = password;
     }
 
+    public String getRoleName() {
+        return roleName;
+    }
+
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
+    }
+
     @Override
     public String toString() {
         return "Customer{" +
@@ -77,6 +95,7 @@ public class Customer {
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 ", roleID=" + roleID +
+                ", roleName=" + roleName +
                 '}';
     }
 }

@@ -13,25 +13,29 @@ public class Book {
 
     private int amount;
 
+    private String description;
+
     private String imagePATH;
 
 
-    public Book(int id, String title, String author, String genre, float price, int amount, String imagePATH) {
+    public Book(int id, String title, String author, String genre, float price, int amount, String description, String imagePATH) {
         this.id = id;
         this.title = title;
         this.author = author;
         this.genre = genre;
         this.price = price;
         this.amount = amount;
+        this.description = description;
         this.imagePATH = imagePATH;
     }
 
-    public Book(String title, String author, String genre, float price, int amount, String imagePATH) {
+    public Book(String title, String author, String genre, float price, int amount, String description, String imagePATH) {
         this.title = title;
         this.author = author;
         this.genre = genre;
         this.price = price;
         this.amount = amount;
+        this.description = description;
         this.imagePATH = imagePATH;
     }
 
@@ -93,6 +97,14 @@ public class Book {
         this.imagePATH = imagePATH;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     @Override
     public String toString() {
         return "Book{" +
@@ -102,6 +114,7 @@ public class Book {
                 ", genre='" + genre + '\'' +
                 ", price=" + price +
                 ", amount=" + amount +
+                ", description='" + description + '\'' +
                 ", imagePATH='" + imagePATH + '\'' +
                 '}';
     }

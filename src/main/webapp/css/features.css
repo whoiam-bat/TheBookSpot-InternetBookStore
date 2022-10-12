@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+:root {
+    --dark-grey: #212529;
+    --white: #fff;
+    --light-grey: #6c757d;
+    --yellow: #ffd332;
+    --dark-yellow: #b08100;
+    --dark-black: #000;
+    --light-black: #666;
+    --border: .1rem solid var(--light-grey);
+    --border-hover: .1rem solid var(--yellow);
+    --background: #303738;
+}
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    outline: none; border: none;
+    text-decoration: none;
+    transition:all, .2s linear;
+}
+a {
+    text-decoration: none;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding: 5rem;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+    width: 1rem;
+}
+
+html::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+    background:var(--light-black);
+}
+/* Start header section */
+.header .header1 {
+    background: var(--dark-grey);
+    padding: 1.5rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .header1 .welcome {
+    font-size: 2.5rem;
+    font-weight: bolder;
+    margin-bottom: 0;
+    color: var(--yellow);
+}
+
+.header .header1 .personal div, .header .header1 .personal a {
+    font-size: 2.5rem;
+    margin-left: 1.5rem;
+    color: var(--white);
+    cursor: pointer;
+}
+.header .header1 .personal div:hover, .header .header1 .personal a:hover {
+    color: var(--yellow);
+}
+
+.header .header2 {
+    background: var(--yellow);
+    text-align: center;
+}
+
+.header .header2 .navbar {
+    padding-top: 0;
+    padding-bottom: 0;
+    display: inline-block;
+}
+
+.header .header2 .navbar a {
+    color: var(--dark-black);
+    display: inline-block;
+    padding: 1.2rem;
+    font-size: 1.7rem;
+}
+
+.header .header2 .navbar a:hover {
+    background: var(--dark-yellow);
+}
+
+.header .header2.active {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+}
+
+/* End header section */
+
+/* Users list section start */
+.users-list {
+    display: grid;
+    grid-template-rows: 70px 550px;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--dark-grey);
+}
+.users-table {
+    height: 550px; width: 1300px;
+    overflow-y: auto;
+    border: var(--border-hover);
+}
+
+/* Users list section end */
+
+/* Books list section start */
+.products-list {
+    display: grid;
+    grid-template-rows: 70px 550px;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--dark-grey);
+}
+.products-table {
+    height: 550px; width: 1300px;
+    overflow-y: auto;
+    border: var(--border-hover);
+}
+
+/* Books list section end */
+
+
+.search-div {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+}
+.search-div p {
+    text-align: center  ;
+    font-size: 2rem;
+    font-weight: bolder;
+    color: var(--yellow);
+}
+.search-form{
+    width: 50rem;
+    height:5rem;
+    overflow: hidden;
+    border: var(--border-hover);
+    border-radius: .5rem;
+}
+.search-form input {
+    font-size: 1.6rem;
+    padding: 0 1.2rem;
+    height: 100%;
+    width: 100%;
+    text-transform: none;
+    background: var(--dark-grey);
+    color: var(--white);
+}

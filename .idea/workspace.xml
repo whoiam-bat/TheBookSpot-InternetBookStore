@@ -9,32 +9,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d533b16-076b-4204-9985-cbc94f100165" name="Changes" comment="Sign up/Sign in has been fixed successfully">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/my/store/controller/ShoppingCart.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/my/store/dao/BuyDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/confirm-order.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/authentication.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/cart.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/javascript/script.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/javascript/search.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/javascript/sign-up-validator.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/shopping-cart.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/templates/backgrounds/main-back.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/store_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/store_war_exploded.xml" afterDir="false" />
+    <list default="true" id="3d533b16-076b-4204-9985-cbc94f100165" name="Changes" comment="1. Created main design of store;&#10;2. Created shopping cart with all its features;&#10;3. Created searching box with JavaScript;&#10;4. Created authentication page.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/my/store/WriteXMLUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/my/store/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/add-product.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/features.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/edit-product.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/user-features.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/xml/books-out.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/xml/books.xsd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/my/store/controller/PersonalCabinet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/my/store/controller/PersonalCabinet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/my/store/controller/SignIn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/my/store/controller/SignIn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/my/store/controller/SignUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/my/store/controller/SignUp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/my/store/controller/ShoppingCart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/my/store/controller/ShoppingCart.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/my/store/controller/WelcomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/my/store/controller/WelcomePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/my/store/dao/BookStockDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/my/store/dao/BookStockDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/my/store/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/my/store/model/Buy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/my/store/model/OrderHasBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/my/store/model/BuyBook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/my/store/dao/CustomerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/my/store/dao/CustomerDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/my/store/model/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/my/store/model/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/my/store/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/my/store/model/Customer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/cabinet.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/cabinet.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/css/welcome-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/welcome-page.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/sign-in-form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/sign-in-form.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/sign-up-form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/sign-up-form.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/javascript/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/javascript/search.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/shopping-cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/shopping-cart.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/welcome-page.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/welcome-page.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,8 +41,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Jsp File" />
+        <option value="CSS File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -114,11 +111,12 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/My Folder/Programming/Java/EPAM/Final Project/Internet store/store&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/My-Folder/Programming/Java/FullWebApp/web-student-tracker&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -136,6 +134,7 @@
       <recent name="D:\мусор\Програмування\Java\ЄБУМ\Final Project\Internet store\store\src\main\webapp\WEB-INF\lib" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\My Folder\Programming\Java\EPAM\Final Project\Internet store\store\src\main\webapp" />
       <recent name="D:\мусор\Програмування\Java\ЄБУМ\Final Project\Internet store\store\src\main\webapp" />
       <recent name="D:\мусор\Програмування\Java\ЄБУМ\Final Project\Internet store\store\src\main\webapp\WEB-INF\templates" />
       <recent name="D:\мусор\Програмування\Java\ЄБУМ\Final Project\Internet store\store\src\main\webapp\css" />
@@ -356,7 +355,38 @@
       <workItem from="1664279598321" duration="5180000" />
       <workItem from="1664288363723" duration="3008000" />
       <workItem from="1664294618325" duration="5970000" />
-      <workItem from="1664301986704" duration="2590000" />
+      <workItem from="1664301986704" duration="3619000" />
+      <workItem from="1664698526277" duration="5643000" />
+      <workItem from="1664716184304" duration="1611000" />
+      <workItem from="1664724320259" duration="3583000" />
+      <workItem from="1664800935247" duration="3069000" />
+      <workItem from="1664868585215" duration="4183000" />
+      <workItem from="1664876424983" duration="2714000" />
+      <workItem from="1664879260492" duration="2391000" />
+      <workItem from="1664891515009" duration="3806000" />
+      <workItem from="1664977383561" duration="554000" />
+      <workItem from="1664979491025" duration="3737000" />
+      <workItem from="1665048838745" duration="697000" />
+      <workItem from="1665051967156" duration="7205000" />
+      <workItem from="1665059575666" duration="2188000" />
+      <workItem from="1665126170314" duration="7255000" />
+      <workItem from="1665133740400" duration="2194000" />
+      <workItem from="1665152547092" duration="2870000" />
+      <workItem from="1665162011321" duration="148000" />
+      <workItem from="1665165126971" duration="7000" />
+      <workItem from="1665214240672" duration="5699000" />
+      <workItem from="1665224594880" duration="4590000" />
+      <workItem from="1665232309332" duration="4808000" />
+      <workItem from="1665397440609" duration="5932000" />
+      <workItem from="1665406551301" duration="4479000" />
+      <workItem from="1665479130853" duration="4197000" />
+      <workItem from="1665488452671" duration="4763000" />
+      <workItem from="1665508627235" duration="4542000" />
+      <workItem from="1665514345071" duration="75000" />
+      <workItem from="1665557750167" duration="7265000" />
+      <workItem from="1665566586435" duration="6741000" />
+      <workItem from="1665574180619" duration="4318000" />
+      <workItem from="1665595974683" duration="572000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed bugs with registrations">
       <created>1662923506319</created>
@@ -372,7 +402,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663066527928</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="1. Created main design of store;&#10;2. Created shopping cart with all its features;&#10;3. Created searching box with JavaScript;&#10;4. Created authentication page.">
+      <created>1664304911351</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1664304911351</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -392,7 +429,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fixed bugs with registrations" />
     <MESSAGE value="Sign up/Sign in has been fixed successfully" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sign up/Sign in has been fixed successfully" />
+    <MESSAGE value="1. Created main design of store;&#10;2. Created shopping cart with all its features;&#10;3. Created searching box with JavaScript;&#10;4. Created authentication page." />
+    <option name="LAST_COMMIT_MESSAGE" value="1. Created main design of store;&#10;2. Created shopping cart with all its features;&#10;3. Created searching box with JavaScript;&#10;4. Created authentication page." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
