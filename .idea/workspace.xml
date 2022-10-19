@@ -9,29 +9,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d533b16-076b-4204-9985-cbc94f100165" name="Changes" comment="1. Created main design of store;&#10;2. Created shopping cart with all its features;&#10;3. Created searching box with JavaScript;&#10;4. Created authentication page.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/my/store/WriteXMLUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/my/store/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/add-product.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/features.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/edit-product.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/user-features.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/xml/books-out.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/xml/books.xsd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
+    <list default="true" id="3d533b16-076b-4204-9985-cbc94f100165" name="Changes" comment="1. Created users and products tracker for admin;">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/my/store/controller/ProductPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/product-page.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/product-page.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/templates/book_img/norse-myth.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/my/store/WriteXMLUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/my/store/WriteXMLUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/my/store/controller/PersonalCabinet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/my/store/controller/PersonalCabinet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/my/store/controller/ShoppingCart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/my/store/controller/ShoppingCart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/my/store/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/my/store/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/my/store/controller/WelcomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/my/store/controller/WelcomePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/my/store/dao/BookStockDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/my/store/dao/BookStockDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/my/store/dao/CustomerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/my/store/dao/CustomerDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/my/store/model/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/my/store/model/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/my/store/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/my/store/model/Customer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/cabinet.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/cabinet.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/css/welcome-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/welcome-page.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/javascript/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/javascript/search.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/shopping-cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/shopping-cart.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/user-features.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/user-features.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/welcome-page.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/welcome-page.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/xml/books-out.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/xml/books-out.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/xml/books.xsd" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/xml/books.xsd" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,9 +37,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -386,7 +382,20 @@
       <workItem from="1665557750167" duration="7265000" />
       <workItem from="1665566586435" duration="6741000" />
       <workItem from="1665574180619" duration="4318000" />
-      <workItem from="1665595974683" duration="572000" />
+      <workItem from="1665595974683" duration="1508000" />
+      <workItem from="1665841815508" duration="202000" />
+      <workItem from="1665992808710" duration="1077000" />
+      <workItem from="1666018380437" duration="626000" />
+      <workItem from="1666025399355" duration="4155000" />
+      <workItem from="1666030781499" duration="2450000" />
+      <workItem from="1666086475918" duration="5515000" />
+      <workItem from="1666094157882" duration="2867000" />
+      <workItem from="1666101660242" duration="3150000" />
+      <workItem from="1666164272732" duration="3520000" />
+      <workItem from="1666171656662" duration="7130000" />
+      <workItem from="1666179563635" duration="5187000" />
+      <workItem from="1666196519080" duration="595000" />
+      <workItem from="1666202326064" duration="1815000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed bugs with registrations">
       <created>1662923506319</created>
@@ -409,7 +418,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664304911351</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="1. Created users and products tracker for admin;">
+      <created>1665596873486</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1665596873486</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -430,7 +446,8 @@
     <MESSAGE value="Fixed bugs with registrations" />
     <MESSAGE value="Sign up/Sign in has been fixed successfully" />
     <MESSAGE value="1. Created main design of store;&#10;2. Created shopping cart with all its features;&#10;3. Created searching box with JavaScript;&#10;4. Created authentication page." />
-    <option name="LAST_COMMIT_MESSAGE" value="1. Created main design of store;&#10;2. Created shopping cart with all its features;&#10;3. Created searching box with JavaScript;&#10;4. Created authentication page." />
+    <MESSAGE value="1. Created users and products tracker for admin;" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. Created users and products tracker for admin;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

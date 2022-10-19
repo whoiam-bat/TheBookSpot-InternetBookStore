@@ -14,8 +14,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
 import java.io.IOException;
-import java.util.Enumeration;
-import java.util.Iterator;
 import java.util.List;
 
 @WebServlet("/personal-cabinet")

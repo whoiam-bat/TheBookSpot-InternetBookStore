@@ -1,48 +1,63 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <bookList xmlns="http://www.nure.ua" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.nure.ua file:///D:/My-Folder/Programming/Java/EPAM/Final-Project/InternetStore/store/src/main/webapp/xml/books.xsd">
     <book>
+        <id>1</id>
         <title>1984</title>
     </book>
     <book>
+        <id>2</id>
         <title>Animal Farm</title>
     </book>
     <book>
+        <id>3</id>
         <title>Harry Potter and the Philosopher's Stone</title>
     </book>
     <book>
+        <id>4</id>
         <title>Harry Potter and the Chamber of Secrets</title>
     </book>
     <book>
+        <id>5</id>
         <title>Harry Potter and the Prisoner of Azkaban</title>
     </book>
     <book>
+        <id>6</id>
         <title>Harry Potter and the Goblet of Fire</title>
     </book>
     <book>
+        <id>7</id>
         <title>Harry Potter and the Order of the Phoenix</title>
     </book>
     <book>
+        <id>8</id>
         <title>Harry Potter and the Half-Blood Prince</title>
     </book>
     <book>
+        <id>9</id>
         <title>Harry Potter and the Deathly Hallows</title>
     </book>
     <book>
+        <id>10</id>
         <title>A Game of Thrones</title>
     </book>
     <book>
+        <id>11</id>
         <title>A Clash of Kings</title>
     </book>
     <book>
+        <id>12</id>
         <title>A Storm of Swords</title>
     </book>
     <book>
+        <id>13</id>
         <title>A Feast for Crows</title>
     </book>
     <book>
+        <id>14</id>
         <title>A Dance with Dragons</title>
     </book>
     <book>
+        <id>15</id>
         <title>Norse Mythology</title>
     </book>
 </bookList>

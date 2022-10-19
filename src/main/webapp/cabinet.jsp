@@ -17,7 +17,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
 
     <link rel="stylesheet" href="css/welcome-page.css">
-
     <script type="text/javascript" src="javascript/script.js"></script>
 </head>
 <body>
@@ -37,7 +36,11 @@
             <a href="${pageContext.request.contextPath}/shopping-cart.jsp" class="fas fa-shopping-cart"
                title="Shopping cart"></a>
             <a href="#" class="fas fa-user-circle" title="${sessionScope.CUSTOMER.fullName}" id="account"></a>
-            <a href="starting-page" class="fas fa-sign-out-alt" title="Sign out"></a>
+
+            <c:url var="logout" value="starting-page">
+                <c:param name="action" value="SIGN_OUT"/>
+            </c:url>
+            <a href="${logout}" class="fas fa-sign-out-alt" title="Sign out"></a>
         </div>
     </div>
 
@@ -58,14 +61,19 @@
     <div class="row">
         <c:forEach var="it" items="${requestScope.BOOK_LIST}">
             <div class="item" id=${it.id}>
+
+                <c:url var="product" value="product-page">
+                    <c:param name="productId" value="${it.id}"/>
+                </c:url>
+
                 <div class="product-media-ref">
-                    <a href="#" title="${it.title}">
+                    <a href="${product}" title="${it.title}">
                         <img data-src="${it.imagePATH}" class="product-media" alt="${it.title}"
                              src="${it.imagePATH}">
                     </a>
                 </div>
                 <div class="product-name-author">
-                    <a href="#" class="product-name" title="${it.title}">${it.title}</a>
+                    <a href="${product}" class="product-name" title="${it.title}">${it.title}</a>
                     <div class="product-author">${it.author}</div>
                 </div>
                 <div class="product-price">
@@ -81,6 +89,7 @@
         </c:forEach>
     </div>
 </section>
+
 <script type="text/javascript" src="javascript/search.js"></script>
 </body>
 </html>

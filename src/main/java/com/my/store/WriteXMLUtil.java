@@ -46,7 +46,7 @@ public class WriteXMLUtil {
             document.appendChild(root);
 
             for (Book book : bookList) {
-                root.appendChild(getBook(document, book.getTitle()));
+                root.appendChild(getBook(document, book.getTitle(), book.getId()));
             }
 
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
@@ -64,15 +64,22 @@ public class WriteXMLUtil {
         }
     }
 
-    private Element getBook(Document document, String title) {
+    private Element getBook(Document document, String title, int id) {
         Element book = document.createElement("book");
 
-        book.appendChild(getBookNode(document, "title", title));
+        book.appendChild(getBookNodeById(document, "id", id));
+        book.appendChild(getBookNodeByTitle(document, "title", title));
+
         return book;
     }
-    private Node getBookNode(Document document, String name, String value) {
+    private Node getBookNodeByTitle(Document document, String name, String value) {
         Element node = document.createElement(name);
         node.appendChild(document.createTextNode(value));
+        return node;
+    }
+    private Node getBookNodeById(Document document, String name, int value) {
+        Element node = document.createElement(name);
+        node.appendChild(document.createTextNode(String.valueOf(value)));
         return node;
     }
 }

@@ -8,8 +8,18 @@
             <xs:sequence>
 
                 <xs:element name="book" maxOccurs="unbounded">
+
                     <xs:complexType>
                         <xs:sequence>
+
+                            <xs:element name="id">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:int">
+                                        <xs:pattern value="\d+"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+
                             <xs:element name="title">
                                 <xs:simpleType>
                                     <xs:restriction base="xs:string">
@@ -17,8 +27,10 @@
                                     </xs:restriction>
                                 </xs:simpleType>
                             </xs:element>
+
                         </xs:sequence>
                     </xs:complexType>
+
                 </xs:element>
 
             </xs:sequence>

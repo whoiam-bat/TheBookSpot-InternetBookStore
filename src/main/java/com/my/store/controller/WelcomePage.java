@@ -10,6 +10,7 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import javax.sql.DataSource;
 import java.io.IOException;
+import java.util.Iterator;
 import java.util.List;
 
 @WebServlet("/starting-page")
@@ -35,9 +36,12 @@ public class WelcomePage extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
 
+        if("SIGN_OUT".equals(request.getParameter("action"))) {
+            session.removeAttribute("CART_LIST");
+        }
+
         session.removeAttribute("ROLE");
         session.removeAttribute("CUSTOMER");
-
 
         session.setAttribute("ROLE", 4);
 
@@ -51,7 +55,7 @@ public class WelcomePage extends HttpServlet {
         request.setAttribute("BOOK_LIST", bookList);
 
         // send to JSP page (view)
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/welcome-page.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("welcome-page.jsp");
         dispatcher.forward(request, response);
     }
 }

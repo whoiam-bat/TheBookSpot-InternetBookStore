@@ -1,13 +1,17 @@
 function arrayInit() {
     const xhttp = new XMLHttpRequest();
-    let res = [];
+    let res = {
+        "id": [],
+        "title": []
+    };
     xhttp.onreadystatechange = function () {
         if(this.readyState === 4 && this.status === 200) {
             let xmlDoc = this.responseXML;
             let tempList = xmlDoc.getElementsByTagName("book");
 
             for (let i = 0; i < tempList.length; i++) {
-                res.push(tempList[i].getElementsByTagName("title")[0].childNodes[0].nodeValue);
+                res["id"].push(tempList[i].getElementsByTagName("id")[0].childNodes[0].nodeValue);
+                res["title"].push(tempList[i].getElementsByTagName("title")[0].childNodes[0].nodeValue);
             }
         }
     };
@@ -21,12 +25,12 @@ let booksInStock = arrayInit();
 
 function autocomplete(inp, booksInStock) {
 
-    var currentFocus;
+    let currentFocus;
 
     //execute a function when someone writes in the text field
     inp.addEventListener("input", function(e) {
-        var a, b, i, val = this.value;
-
+        let a, b, i, val = this.value;
+        let productRef;
         //close any already open list of autocompleted values
         closeAllLists();
 
@@ -44,20 +48,28 @@ function autocomplete(inp, booksInStock) {
         //append the DIV element as a child of the autocomplete container
         this.parentNode.appendChild(a);
 
-        for (const it of booksInStock) {
+
+        for (let it = 0; it < booksInStock.id.length && it < booksInStock.title.length; it++) {
+
             //check if the item starts with the same letters as the text field value
-            if (it.substr(0, val.length).toUpperCase() === val.toUpperCase()) {
+            if (booksInStock.title[it].substr(0, val.length).toUpperCase() === val.toUpperCase()) {
                 //create a DIV element for each matching element
-                b = document.createElement("DIV");
-                b.setAttribute("id", "item");
-                b.setAttribute("class", "item");
+                b = document.createElement("a");
+                b.setAttribute("href", "product-page?productId=" + booksInStock.id[it]);
+
+
+
+
                 //make the matching letters bold
-                b.innerHTML = "<strong>" + it.substr(0, val.length) + "</strong>";
-                b.innerHTML += it.substr(val.length);
+                productRef = document.createElement("div");
+                productRef.setAttribute("id", "item");
+                productRef.setAttribute("class", "item");
+                productRef.innerText = booksInStock.title[it];
+
+                b.appendChild(productRef);
 
                 // insert a input field that will hold the current array item's value
-                b.innerHTML += "<input type='hidden' value='" + it + "'>";
-
+                b.innerHTML += "<input type='hidden' value='" + booksInStock.title[it] + "'>";
                 // execute a function when someone clicks on the item value (DIV element)
                 b.addEventListener("click", function (e) {
                     // insert the value for the autocomplete text field:
@@ -66,6 +78,7 @@ function autocomplete(inp, booksInStock) {
                     (or any other open lists of autocompleted values*/
                     closeAllLists();
                 });
+
                 a.appendChild(b);
             }
         }
@@ -131,7 +144,7 @@ function autocomplete(inp, booksInStock) {
     });
 }
 
-  /*initiate the autocomplete function on the "myInput" element,
-    and pass along the countries array as possible autocomplete values*/
+/*initiate the autocomplete function on the "myInput" element,
+  and pass along the countries array as possible autocomplete values*/
 
 autocomplete(document.getElementById("search-field"), booksInStock);

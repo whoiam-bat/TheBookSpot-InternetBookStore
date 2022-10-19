@@ -63,13 +63,13 @@ public class UserController extends HttpServlet {
             String title = req.getParameter("book-title");
             if (!title.equals("")) {
                 session.removeAttribute("BOOK_LIST");
-                List<Book> book = bookStockDao.searchBook(title);
+                List<Book> book = bookStockDao.searchBookByName(title);
                 session.setAttribute("BOOK_LIST", book);
             }
         } else if ("LOAD_PRODUCT".equals(command)) {
             String bookId = req.getParameter("book");
 
-            Book temp = bookStockDao.getBook(bookId);
+            Book temp = bookStockDao.searchBookById(bookId);
 
             req.setAttribute("BOOK", temp);
 

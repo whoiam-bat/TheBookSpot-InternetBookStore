@@ -80,7 +80,7 @@ public class ShoppingCart extends HttpServlet {
         // get book id from request attribute
         int id = Integer.parseInt(req.getParameter("BOOK_ID"));
         BuyBook tempBuyBook = new BuyBook(id, 1);
-        Book tempBook = bookStockDao.getBook(String.valueOf(id));
+        Book tempBook = bookStockDao.searchBookById(String.valueOf(id));
 
         HttpSession session = req.getSession();
         Map<BuyBook, Book> listBooksInCart = (Map<BuyBook, Book>) req.getSession().getAttribute("CART_LIST");
@@ -109,9 +109,9 @@ public class ShoppingCart extends HttpServlet {
             }
         }
         if((int) req.getSession().getAttribute("ROLE") == 4) {
-            resp.sendRedirect("starting-page");
+            resp.sendRedirect("starting-page#" + id);
         } else {
-            resp.sendRedirect("personal-cabinet");
+            resp.sendRedirect("personal-cabinet#" + id);
         }
     }
 

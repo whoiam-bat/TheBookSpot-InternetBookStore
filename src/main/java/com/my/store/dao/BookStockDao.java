@@ -44,7 +44,7 @@ public class BookStockDao {
         return bookList;
     }
 
-    public Book getBook(String bookId) {
+    public Book searchBookById(String bookId) {
         Book res = null;
         try(
                 Connection con = dataSource.getConnection();
@@ -68,7 +68,7 @@ public class BookStockDao {
         return res;
     }
 
-    public List<Book> searchBook(String nameBook) {
+    public List<Book> searchBookByName(String nameBook) {
         List<Book> res = new ArrayList<>();
         try(
                 Connection con = dataSource.getConnection();
