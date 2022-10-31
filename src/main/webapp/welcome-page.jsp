@@ -20,11 +20,8 @@
         </form>
 
         <div class="personal">
-            <c:if test="${not empty sessionScope.CART_LIST}">
-                <p class="amount-items">${fn:length(sessionScope.CART_LIST)}</p>
-            </c:if>
-            <a href="${pageContext.request.contextPath}/shopping-cart" class="fas fa-shopping-cart"
-               title="Shopping cart">
+            <a href="${pageContext.request.contextPath}/shopping-cart" title="Shopping cart">
+                <i class="fas fa-shopping-cart cart" value="${fn:length(sessionScope.CART_LIST)}"></i>
             </a>
             <a href="${pageContext.request.contextPath}/sign-in" class="fas fa-user" title="Sign in"></a>
             <a href="${pageContext.request.contextPath}/sign-up" class="fas fa-user-plus" title="Sign up"></a>
@@ -45,7 +42,7 @@
 <section class="home" id="home">
     <div class="row">
         <c:forEach var="it" items="${requestScope.BOOK_LIST}">
-            <div class="item" id=${it.id}>
+            <div class="page-item" id=${it.id}>
 
                 <c:url var="product" value="product-page">
                     <c:param name="productId" value="${it.id}"/>
@@ -67,7 +64,9 @@
                     <form action="shopping-cart" class="buy-form" method="post">
                         <input type="hidden" name="BOOK_ID" value="${it.id}">
                         <input type="hidden" name="command" value="ADD_TO_CART">
-                        <button type="submit" class="btn">Add to cart</button>
+                        <button type="submit" class="btn" ${it.amount == 0 ? 'disabled' : ''}>
+                                ${it.amount == 0 ? 'Out of stock' : 'Add to cart'}
+                        </button>
                     </form>
                 </div>
             </div>

@@ -21,20 +21,17 @@
 <body>
 <header class="header">
     <div class="header1">
-        <a href="#" class="logo"><i class="fas fa-book"></i> the book spot</a>
+        <a href="${sessionScope.ROLE == 4 ? 'starting-page' : 'personal-cabinet'}" class="logo">
+            <i class="fas fa-book"></i> the book spot
+        </a>
         <form class="search-form" autocomplete="off">
             <input type="search" id="search-field" name="myBook" placeholder="Search..."/>
         </form>
 
         <div class="personal">
-            <c:if test="${not empty sessionScope.CART_LIST}">
-                <p class="amount-items">${fn:length(sessionScope.CART_LIST)}</p>
-            </c:if>
-            <a href="${pageContext.request.contextPath}/shopping-cart" class="fas fa-shopping-cart"
-               title="Shopping cart">
+            <a href="${pageContext.request.contextPath}/shopping-cart" title="Shopping cart">
+                <i class="fas fa-shopping-cart cart" value="${fn:length(sessionScope.CART_LIST)}"></i>
             </a>
-
-
             <c:if test="${sessionScope.ROLE == 4}">
                 <a href="${pageContext.request.contextPath}/sign-in" class="fas fa-user" title="Sign in"></a>
                 <a href="${pageContext.request.contextPath}/sign-up" class="fas fa-user-plus" title="Sign up"></a>
@@ -49,7 +46,9 @@
     <div class="header2">
         <nav class="navbar">
             <a href="${sessionScope.ROLE == 4 ? 'starting-page' : 'personal-cabinet'}#${requestScope.PRODUCT.id}">Home</a>
-            <a href="#featured">featured</a>
+            <a href=${sessionScope.ROLE == 1 || sessionScope.ROLE == 2 ? "features" : "#featured"}>
+                ${sessionScope.ROLE == 1 || sessionScope.ROLE == 2 ? "features" : "featured"}
+            </a>
             <a href="#arrivals">arrivals</a>
             <a href="#reviews">reviews</a>
             <a href="#blogs">blogs</a>
@@ -57,36 +56,35 @@
     </div>
 </header>
 
-<main class="container">
+<div class="container">
     <div class="left-column">
-        <img data-image="book-img" src="${requestScope.PRODUCT.imagePATH}" alt="${requestScope.PRODUCT.title}">
+        <img data-image="book-img" src="${requestScope.PRODUCT.imagePATH}" class="img" alt="${requestScope.PRODUCT.title}">
     </div>
     <div class="right-column">
 
-        <!-- Product Description -->
         <div class="product-description">
             <span>Book</span>
-            <h1>${requestScope.PRODUCT.title}</h1>
-            <p>${requestScope.PRODUCT.description}</p>
-        </div>
-
-        <!-- Product Configuration -->
-        <div class="product-configuration">
-
+            <h1 class="title">${requestScope.PRODUCT.title}</h1>
+            <h2 class="author">${requestScope.PRODUCT.author}</h2>
+            <p class="descr">${requestScope.PRODUCT.description}</p>
         </div>
 
         <div class="product-price">
-            <span>$${requestScope.PRODUCT.price}</span>
+            <span class="price">$${requestScope.PRODUCT.price}</span>
             <form action="shopping-cart" class="buy-form" method="post">
-                <input type="hidden" name="BOOK_ID" value="${it.id}">
+                <input type="hidden" name="BOOK_ID" value="${requestScope.PRODUCT.id}">
                 <input type="hidden" name="command" value="ADD_TO_CART">
-                <button type="submit" class="cart-btn">Add to cart</button>
+                <button type="submit" class="btn" ${requestScope.PRODUCT.amount == 0 ? 'disabled' : ''}>
+                    ${requestScope.PRODUCT.amount == 0 ? 'Out of stock' : 'Add to cart'}
+                </button>
             </form>
         </div>
     </div>
-</main>
+</div>
 
+<footer class="footer">
 
+</footer>
 <script type="text/javascript" src="javascript/search.js"></script>
 </body>
 </html>

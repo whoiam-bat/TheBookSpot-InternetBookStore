@@ -60,4 +60,16 @@
         <id>15</id>
         <title>Norse Mythology</title>
     </book>
+    <book>
+        <id>16</id>
+        <title>Red Dragon</title>
+    </book>
+    <book>
+        <id>17</id>
+        <title>The Silence of the Lambs</title>
+    </book>
+    <book>
+        <id>18</id>
+        <title>Hannibal</title>
+    </book>
 </bookList>

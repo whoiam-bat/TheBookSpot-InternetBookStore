@@ -19,7 +19,7 @@ public class BookStockDao {
         try(
                 Connection con = dataSource.getConnection();
                 Statement stmt = con.createStatement();
-                ResultSet rs = stmt.executeQuery("SELECT * FROM book WHERE amount > 0;");
+                ResultSet rs = stmt.executeQuery("SELECT * FROM book;");
                 ) {
 
             while(rs.next()) {

@@ -172,10 +172,11 @@ public class UserController extends HttpServlet {
     private void editProduct(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         HttpSession session = req.getSession();
 
-        List<Book> books = (List<Book>) session.getAttribute("BOOK_LIST");
+        List<Book> books = (ArrayList<Book>) session.getAttribute("BOOK_LIST");
         session.removeAttribute("BOOK_LIST");
 
         String book = req.getParameter("book");
+
         float price = Float.parseFloat(req.getParameter("price"));
         int amount = Integer.parseInt(req.getParameter("amount"));
 

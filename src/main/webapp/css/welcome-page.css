@@ -88,7 +88,7 @@ section {
     background: var(--dark-grey);
     color: var(--white);
 }
-.header .header1 .personal p {
+/*.header .header1 .personal{
     position: relative;
     left: 37px; top:17px;
     font-size: 1.2rem;
@@ -97,14 +97,34 @@ section {
     width: 15px; height: 15px;
     border-radius: 15%;
     background-color: var(--yellow);
+}*/
+.header .header1 .personal{
+    display: grid;
+    column-gap: 7px;
+    grid-template-columns: 45px 35px 45px;
+    justify-content: center;
+    align-items: center;
 }
-.header .header1 .personal div, .header .header1 .personal a {
+.header .header1 .personal a {
     font-size: 2.5rem;
     margin-left: 1.5rem;
     color: var(--white);
     cursor: pointer;
 }
-.header .header1 .personal div:hover, .header .header1 .personal a:hover {
+.header .header1 .personal .cart:after{
+    content:attr(value);
+    font-family: 'Poppins', sans-serif;
+    font-size:11px;
+    color: var(--dark-black);
+    background: var(--yellow);
+    border-radius:3px;
+    padding: 0 5px;
+    position:relative;
+    left:-7px;
+    top:-14px;
+
+}
+.header .header1 .personal a:hover {
     color: var(--yellow);
 }
 
@@ -150,18 +170,22 @@ section {
     grid-template-rows: 50rem;
 }
 
-.home .row .item {
+.home .row .page-item {
     color: var(--white);
     display: grid;
-    grid-template-rows: 35rem 10rem 5rem;
+    grid-template-rows: 35rem 8rem 7rem;
     justify-items: center;
 }
+.page-item:hover {
+    border: var(--border)!important;
+}
 
-.home .row .item .product-media-ref {
+
+.home .row .page-item .product-media-ref {
     position: relative;
     display: block;
 }
-.home .row .item .product-media-ref .product-media {
+.home .row .page-item .product-media-ref .product-media {
     height: 300px;
     width: 200px;
     position: relative;
@@ -172,7 +196,7 @@ section {
     transform: translate(-50%, -50%);
 }
 
-.home .row .item .product-name-author {
+.home .row .page-item .product-name-author {
     position: relative;
     display: grid;
     grid-template-columns: auto;
@@ -180,15 +204,15 @@ section {
     font-size: 14px;
     width: 200px;
 }
-.home .row .item .product-name-author a{
+.home .row .page-item .product-name-author a{
     text-decoration: none;
     color: var(--white);
 }
-.home .row .item .product-name-author .product-author{
+.home .row .page-item .product-name-author .product-author{
     color: var(--lighter-grey);
 }
 
-.home .row .item .product-price{
+.home .row .page-item .product-price{
     position: relative;
     align-items: center;
     justify-content: center;
@@ -196,17 +220,17 @@ section {
     grid-template-columns: 100px auto;
     font-size: 14px;
 }
-.home .row .item .product-price .price{
+.home .row .page-item .product-price .price{
     font-size: 2rem;
     color: var(--yellow);
 }
-.home .row .item .product-price .buy-form .btn{
+.home .row .page-item .product-price .buy-form .btn{
     border: 1px solid var(--lighter-grey);
     color: var(--lighter-grey);
-    width: 100%; height: 100%;
+    width: 100%; height: 50px;
     font-size: 2rem;
 }
-.home .row .item .product-price .buy-form .btn:hover {
+.home .row .page-item .product-price .buy-form .btn:hover {
     border: 1px solid var(--yellow);
     color: var(--dark-black);
     background-color: var(--yellow);

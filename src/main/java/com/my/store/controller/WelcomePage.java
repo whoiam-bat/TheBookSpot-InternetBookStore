@@ -10,7 +10,6 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import javax.sql.DataSource;
 import java.io.IOException;
-import java.util.Iterator;
 import java.util.List;
 
 @WebServlet("/starting-page")
